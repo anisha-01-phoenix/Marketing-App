@@ -12,7 +12,7 @@
         <activity
             android:name=".shopkeeper.shopkeepercontent"
             android:exported="true" />
-        <activity android:name=".shopkeeper.MainActivity">
+        <activity android:name=".classes.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

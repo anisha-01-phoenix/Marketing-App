@@ -37,7 +37,8 @@ public class shopcontentadapter extends RecyclerView.Adapter<shopcontentadapter.
            holder.prodname.setText(totallist.get(position).getName());
            holder.price.setText(totallist.get(position).getPrice());
            holder.quantity.setText(totallist.get(position).getQtavailable());
-            Log.v("jjjk", totallist.get(position).getName());
+          //  Log.v("jjjk", totallist.get(position).getName());
+        holder.iv.setImageResource(R.drawable.prof);
 
     }
 
