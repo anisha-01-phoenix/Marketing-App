@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
+        <activity
+            android:name=".shopkeeper.shopkeepercontent"
+            android:exported="true" />
+        <activity android:name=".classes.MainActivity">
         <activity android:name=".activities.OrderList"/>
         <activity android:name=".MainActivity">
         <activity android:name=".VerifyPhoneNumber"></activity>
@@ -21,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
