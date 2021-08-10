@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.1" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__order.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__pending.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__processing.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
