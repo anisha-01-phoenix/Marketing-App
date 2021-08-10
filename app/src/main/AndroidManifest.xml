@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
-            android:name=".MainActivity"/>
-        <activity android:name=".activities.OrderList">
+            android:name=".activities.OrderList"/>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
