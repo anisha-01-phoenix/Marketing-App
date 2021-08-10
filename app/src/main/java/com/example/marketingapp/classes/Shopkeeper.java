@@ -4,13 +4,73 @@ import java.io.Serializable;
 
 public class Shopkeeper implements Serializable {
 
-    private String uniqueId;
-    private String shopName;
-    private String address;
-    private String email;
-    private String phoneNo;
-    private long rating;
-    private boolean isWholeSeller;
+    private String uniqueId = "";
+    private String shopName = "";
+    private String address = "";
+    private String phoneNo = "";
+    private long rating = 0;
+    private boolean isWholeSeller = false;
     private Coordinates coordinates;
 
+
+    public Shopkeeper()
+    {
+
+    }
+
+    public String getUniqueId() {
+        return uniqueId;
+    }
+
+    public void setUniqueId(String uniqueId) {
+        this.uniqueId = uniqueId;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public long getRating() {
+        return rating;
+    }
+
+    public void setRating(long rating) {
+        this.rating = rating;
+    }
+
+    public boolean isWholeSeller() {
+        return isWholeSeller;
+    }
+
+    public void setWholeSeller(boolean wholeSeller) {
+        isWholeSeller = wholeSeller;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
 }

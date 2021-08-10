@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
-        <activity
-            android:name=".activities.OrderList"/>
+        <activity android:name=".activities.OrderList"/>
         <activity android:name=".MainActivity">
+        <activity android:name=".VerifyPhoneNumber"></activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".FirstScreen" />
+        <activity android:name=".SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
