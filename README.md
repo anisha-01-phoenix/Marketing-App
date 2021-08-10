@@ -17,7 +17,13 @@ Order :-
     private String uniqueIdShop;
     private String uniqueIdUser;
     private List<Item> itemsList;
-    private String orderStatus;
+    private int orderStatus; 
+    
+    // orderStatus=0 -> Available
+    // orderStatus=1 -> Pending
+    // orderStatus=2 -> Processing
+    // orderStatus=3 -> Not Available
+    
     private String date;
     private String time;
     private String price;

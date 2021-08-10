@@ -13,6 +13,12 @@
             android:name=".shopkeeper.shopkeepercontent"
             android:exported="true" />
         <activity android:name=".classes.MainActivity">
+        <activity android:name=".activities.OrderList"/>
+        <activity android:name=".MainActivity">
+        <activity android:name=".VerifyPhoneNumber"></activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".FirstScreen" />
+        <activity android:name=".SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
