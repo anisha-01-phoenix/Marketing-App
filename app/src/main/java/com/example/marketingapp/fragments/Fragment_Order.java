@@ -27,7 +27,7 @@ public class Fragment_Order extends Fragment {
     FragmentOrderBinding fragmentOrderBinding;
     OrdersAdapter adapter;
     DatabaseReference reference;
-    ArrayList<Order> list;
+    ArrayList<Order> list ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

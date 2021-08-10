@@ -34,6 +34,19 @@ public class OrderList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         activityOrderListBinding = ActivityOrderListBinding.inflate(getLayoutInflater());
         setContentView(activityOrderListBinding.getRoot());
+//
+//        databaseReference = FirebaseDatabase.getInstance().getReference("Orders");
+//
+//        Item item = new Item("yuii","gfjf");
+//        Item item2 = new Item("yuii","gfjf");
+//        Item item3 = new Item("yuii","gfjf");
+//        List<Item> itemList = new ArrayList<>();
+//        itemList.add(item);
+//        itemList.add(item3);
+//        itemList.add(item2);
+//        Order order = new Order("123", "12345", "1236", itemList, 1, "09/08/2021", "time", "500");
+//        databaseReference.push().setValue(order);
+
 
         //   FirebaseApp.InitializeApp(Application.Context);
         getSupportActionBar().hide();
@@ -44,41 +57,41 @@ public class OrderList extends AppCompatActivity {
         adapter.add(new Fragment_Processing(), "Processing");
         activityOrderListBinding.viewPager.setAdapter(adapter);
         activityOrderListBinding.tablayout.setupWithViewPager(activityOrderListBinding.viewPager);
-        databaseReference = FirebaseDatabase.getInstance().getReference("Orders");
+//        databaseReference = FirebaseDatabase.getInstance().getReference("Orders");
 
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("uniqueIdShop", "12345");
-        map.put("uniqueIdUser", "1236");
-        map.put("orderStatus", 1);
-        map.put("date", "09/08/21");
-        map.put("time", "4pm");
-        map.put("price", "Rs. 200");
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("productName", "name");
-        hashMap.put("quantity", "5kg");
-        databaseReference.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                databaseReference.child("itemsList").setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Item item = new Item();
-                        List<Item> itemList = new ArrayList<>();
-                        itemList.add(item);
-                        Order order = new Order("123", "12345", "1236", itemList, 1, "09/08/2021", "time", "500");
-                        databaseReference.child(databaseReference.push().getKey()).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("Tag", "Item ordered!");
-                            }
-                        });
-
-
-                    }
-                });
-            }
-        });
+//
+//        HashMap<String, Object> map = new HashMap<>();
+//        map.put("uniqueIdShop", "12345");
+//        map.put("uniqueIdUser", "1236");
+//        map.put("orderStatus", 1);
+//        map.put("date", "09/08/21");
+//        map.put("time", "4pm");
+//        map.put("price", "Rs. 200");
+//        HashMap<String, String> hashMap = new HashMap<>();
+//        hashMap.put("productName", "name");
+//        hashMap.put("quantity", "5kg");
+//        databaseReference.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                databaseReference.child("itemsList").setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        Item item = new Item("","");
+//                        List<Item> itemList = new ArrayList<>();
+//                        itemList.add(item);
+//                        Order order = new Order("123", "12345", "1236", itemList, 1, "09/08/2021", "time", "500");
+//                        databaseReference.child(databaseReference.push().getKey()).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                            @Override
+//                            public void onSuccess(Void unused) {
+//                                Log.d("Tag", "Item ordered!");
+//                            }
+//                        });
+//
+//
+//                    }
+//                });
+//            }
+//        });
 
 
     }

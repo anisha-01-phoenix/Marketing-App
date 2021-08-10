@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class bottom_frag_add_items extends BottomSheetDialogFragment {
+
 FragmentBottomFragAddItemsBinding binding;
 
 
