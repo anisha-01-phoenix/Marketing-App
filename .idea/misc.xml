@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/layoutbg.xml" value="0.1" />
+        <entry key="..\:/Marketing-App/app/src/main/res/drawable/llbg.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonproducts.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonred.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonwhite.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_all_shops.xml" value="0.13768115942028986" />
-        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.176" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.264" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_products.xml" value="0.12" />
-        <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_reviews.xml" value="0.13677536231884058" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_reviews.xml" value="0.16799999999999998" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/llbg.xml" value="0.1" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/reviews_sr.xml" value="0.264" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/shop_item_sr.xml" value="0.176" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.1" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />

@@ -22,12 +22,14 @@ public class shops_items extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
+        binding.ll.setVisibility(View.VISIBLE);
         getSupportFragmentManager().beginTransaction().add(R.id.shopContainer, new products(), null).commit();
 
 
         binding.shopReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.ll.setVisibility(View.GONE);
 
                 binding.shopReview.setBackgroundResource(R.drawable.shopbuttonwhite);
                 binding.shopReview.setTextColor(Color.parseColor("#A62121"));
@@ -48,6 +50,7 @@ public class shops_items extends AppCompatActivity {
                 binding.shopReview.setBackgroundResource(R.drawable.shopbuttonred);
                 binding.shopReview.setTextColor(Color.parseColor("#FFFFFF"));
 
+                binding.ll.setVisibility(View.VISIBLE);
 
                 getSupportFragmentManager().beginTransaction().add(R.id.shopContainer, new products(), null).commit();
 

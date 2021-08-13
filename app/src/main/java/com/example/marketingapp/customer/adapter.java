@@ -27,7 +27,7 @@ public class adapter extends RecyclerView.Adapter<adapter.holder> {
     @NonNull
     @Override
     public holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_item_sr,null,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_item_sr,parent,false);
         return new adapter.holder(view);
     }
 
