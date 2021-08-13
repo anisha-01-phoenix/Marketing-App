@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Marketing App/Marketing-App/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
@@ -23,5 +24,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="Marketing_App.app" />
+      </set>
+    </option>
   </component>
 </project>
