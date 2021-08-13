@@ -3,18 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/card_outline.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_first_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.1" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.264" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__order.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__pending.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__processing.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -5,6 +5,8 @@ import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,33 +15,50 @@ public class Order implements Serializable {
     private String uniqueId;
     private String uniqueIdShop;
     private String uniqueIdUser;
-    private List<Item> itemsList;
     private int orderStatus;
     private String date;
     private String time;
     private String price;
+    private String productName;
+    private String quantity;
 
     public Order() {
     }
 
-    public Order(String uniqueId, String uniqueIdShop, String uniqueIdUser, List<Item> itemsList, int orderStatus, String date, String time, String price) {
+    public Order(String uniqueId, String uniqueIdShop, String uniqueIdUser, int orderStatus, String date, String time, String price, String productName, String quantity) {
         this.uniqueId = uniqueId;
         this.uniqueIdShop = uniqueIdShop;
         this.uniqueIdUser = uniqueIdUser;
-        this.itemsList = itemsList;
         this.orderStatus = orderStatus;
         this.date = date;
         this.time = time;
         this.price = price;
-
+        this.productName = productName;
+        this.quantity = quantity;
     }
 
-    public List<Item> getItemsList() {
-        return itemsList;
+    public String getUniqueId() {
+        return uniqueId;
     }
 
-    public void setItemsList(List<Item> itemsList) {
-        this.itemsList = itemsList;
+    public void setUniqueId(String uniqueId) {
+        this.uniqueId = uniqueId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public int getOrderStatus() {
@@ -87,7 +106,7 @@ public class Order implements Serializable {
                 break;
             case 2:
                 textView.setText("Processing");
-                textView.setTextColor(Color.CYAN);
+                textView.setTextColor(Color.DKGRAY);
                 break;
             case 3:
                 textView.setText("Not Available");
@@ -98,5 +117,6 @@ public class Order implements Serializable {
 
         }
     }
+
 
 }
