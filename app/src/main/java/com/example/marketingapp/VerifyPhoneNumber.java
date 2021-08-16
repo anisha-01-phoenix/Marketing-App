@@ -3,10 +3,13 @@ package com.example.marketingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.marketingapp.classes.Shopkeeper;
+import com.example.marketingapp.classes.User;
 import com.example.marketingapp.databinding.ActivityVerifyPhoneNumberBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,8 +29,11 @@ import java.util.concurrent.TimeUnit;
 public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityVerifyPhoneNumberBinding binding;
+    private User user;
+    private Shopkeeper shopkeeper;
     private String phoneNumber;
     private FirebaseAuth mAuth;
+    private SharedPreferences sharedPreferences;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private String TAG = "PhoneNumber";
     private String veri;
@@ -38,10 +44,24 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
         binding = ActivityVerifyPhoneNumberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        sharedPreferences = getSharedPreferences("Market", MODE_PRIVATE);
+        user = new User();
+        shopkeeper = new Shopkeeper();
+
+        if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user"))
+        {
+            user = (User) getIntent().getSerializableExtra("user");
+            phoneNumber = user.getPhoneNumber();
+        }
+        else
+        {
+            shopkeeper = (Shopkeeper) getIntent().getSerializableExtra("shopkeeper");
+            phoneNumber = shopkeeper.getPhoneNo();
+        }
+
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("en");
 
-        phoneNumber = getIntent().getStringExtra("phone");
 
         PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
                 .setPhoneNumber(phoneNumber)       // Phone number to verify
@@ -82,7 +102,17 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
 
-                            FirebaseUser user = task.getResult().getUser();
+                            FirebaseUser muser = task.getResult().getUser();
+
+                            if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user"))
+                            {
+                                user.setUniqueId(muser.getUid());
+                            }
+                            else
+                            {
+                                shopkeeper.setUniqueId(muser.getUid());
+                            }
+
                             // Update UI
                         } else {
                             // Sign in failed, display a message and update the UI
