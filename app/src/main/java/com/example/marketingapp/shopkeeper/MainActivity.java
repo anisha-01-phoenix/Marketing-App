@@ -1,4 +1,4 @@
-package com.example.marketingapp.classes;
+package com.example.marketingapp.shopkeeper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tryer(View view) {
-        Intent intent=new Intent(this, shopkeepercontent.class);
+        Intent intent=new Intent(this,shop_type.class);
         startActivity(intent);
     }
 }
