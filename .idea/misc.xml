@@ -29,8 +29,6 @@
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
-
-
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_first_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -50,11 +48,21 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
 
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_edit_shop_items.xml" value="0.184375" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shop_type.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/dialog_layout_shop_content.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_reviews_bottom_frag_shop.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_reviews_shop_items.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
-
       </map>
     </option>
   </component>

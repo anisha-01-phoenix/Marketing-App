@@ -34,7 +34,7 @@ FragmentBottomFragAddItemsBinding binding;
                 modelcontentFbase.setPrice(binding.prodprice.getText().toString());
                 modelcontentFbase.setName(binding.prodnamefrag.getText().toString());
                 modelcontentFbase.setQt_available(binding.prodqtavailable.getText().toString());
-                ref1.push().setValue(modelcontentFbase);
+                ref1.child(binding.prodnamefrag.getText().toString()).setValue(modelcontentFbase);
                 dismiss();
             }
         });

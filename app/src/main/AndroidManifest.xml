@@ -30,6 +30,15 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".shopkeeper.edit_shop_items"
+            android:exported="true" />
+        <activity
+            android:name=".shopkeeper.shop_type"
+            android:exported="true" />
+        <activity
+            android:name=".shopkeeper.shopkeepercontent"
+            android:exported="true" />
+        <activity android:name=".shopkeeper.MainActivity">
             android:name=".map.MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps" />
@@ -46,6 +55,9 @@
 
 
         </activity>
+        <activity android:name=".VerifyPhoneNumber" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".FirstScreen" />
 
         <activity
             android:name=".customer.allShops"
