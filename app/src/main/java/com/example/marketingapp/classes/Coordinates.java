@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Coordinates implements Serializable {
 
-    private double latitude;
-    private double longitude;
+    private double latitude = 2;
+    private double longitude = 0;
 
     public Coordinates(double latitude, double longitude) {
         this.latitude = latitude;
