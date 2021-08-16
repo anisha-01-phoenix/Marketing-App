@@ -16,7 +16,8 @@ Order :-
     private String uniqueId;
     private String uniqueIdShop;
     private String uniqueIdUser;
-    private List<Item> itemsList;
+    private String productName;
+    private String quantity;
     private int orderStatus; 
     
     // orderStatus=0 -> Available
@@ -28,10 +29,6 @@ Order :-
     private String time;
     private String price;
     
-Item :-
-
-    private String productName;
-    private String quantity;
     
 ShopContent :-
 
