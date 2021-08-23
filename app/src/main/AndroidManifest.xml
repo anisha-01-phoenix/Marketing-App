@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
+            android:name=".customer.placeOrder"
+            android:exported="true" />
+        <activity
             android:name=".customer.checkCart"
             android:exported="true" />
         <!--
@@ -55,7 +58,7 @@
         <activity
             android:name=".customer.allShops"
             android:exported="true" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".activities.OrderList" />
     </application>
 

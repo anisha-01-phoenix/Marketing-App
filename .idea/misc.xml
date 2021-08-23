@@ -10,8 +10,11 @@
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonred.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonwhite.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_all_shops.xml" value="0.13768115942028986" />
-        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_check_cart.xml" value="0.176" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_check_cart.xml" value="0.136" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.1" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_place_order.xml" value="0.12409420289855072" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.152" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/check_cart_sr.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_add_review_customer.xml" value="0.2234375" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_products.xml" value="0.1" />

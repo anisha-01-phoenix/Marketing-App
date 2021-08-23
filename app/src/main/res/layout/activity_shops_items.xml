@@ -70,7 +70,7 @@
         android:layout_height="96dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/layoutbg"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -79,30 +79,15 @@
             android:id="@+id/checkCart"
             android:layout_width="147dp"
             android:layout_height="74dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="15dp"
             android:background="@drawable/shopbuttonred"
             android:padding="10dp"
             android:text="Check Cart"
             android:textColor="@color/white"
             android:textSize="19sp"
 
-            android:textStyle="bold" />
-
-        <Button
-            android:layout_width="147dp"
-            android:layout_height="74dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/shopbuttonred"
-            android:padding="10dp"
-            android:text="Continue"
-            android:textColor="@color/white"
-            android:textSize="19sp"
             android:textStyle="bold" />
 
 
