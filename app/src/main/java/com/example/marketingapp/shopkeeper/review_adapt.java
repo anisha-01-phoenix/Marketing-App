@@ -39,9 +39,9 @@ public class review_adapt extends RecyclerView.Adapter<review_adapt.recviewholde
 
 
 
-        holder.customername.setText();
-        holder.feedback.setText();
-        holder.ratingBar.setRating();
+        holder.customername.setText("");
+        holder.feedback.setText("");
+        holder.ratingBar.setRating(1);
 
 
     }

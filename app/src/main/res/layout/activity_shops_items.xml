@@ -76,6 +76,7 @@
 
 
         <Button
+            android:id="@+id/checkCart"
             android:layout_width="147dp"
             android:layout_height="74dp"
             android:layout_gravity="center_vertical"
