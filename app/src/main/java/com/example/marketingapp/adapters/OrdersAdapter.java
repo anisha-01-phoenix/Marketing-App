@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.marketingapp.activities.OrderList;
 import com.example.marketingapp.classes.Order;
 import com.example.marketingapp.databinding.OrderLayoutBinding;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -41,6 +43,16 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public Context getContext() {
+        return  new OrderList().getParent();
+    }
+
+    public void editStatus(int position, int status) {
+        Order order= list.get(position);
+        order.setOrderStatus(status);
+        FirebaseDatabase.getInstance().getReference("Orders").child(order.getUniqueId()).child("orderStatus").setValue(status);
     }
 
 

@@ -8,34 +8,33 @@
             name="order"
             type="com.example.marketingapp.classes.Order" />
 
-        <variable
-            name="item"
-            type="com.example.marketingapp.classes.Item" />
 
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="50dp"
+        android:elevation="200dp"
+        android:background="@color/white"
         app:cardCornerRadius="20dp"
         android:layout_margin="5dp"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/productImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/atta" />
 
             <TextView
                 android:id="@+id/productName"
@@ -47,8 +46,8 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
+                android:text="@{order.productName}"
                 android:layout_toRightOf="@id/productImage"
-                android:text="@{item.productName}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#9E2118"
                 android:textStyle="bold" />
@@ -64,7 +63,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@id/productName"
-                android:text="@{item.quantity}"
+                android:text="@{order.quantity}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#9E2118"
                 android:textStyle="normal" />
@@ -87,7 +86,6 @@
 
             <TextView
                 android:id="@+id/productAvailable"
-                android:setText="@{order.orderStatus}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/productName"
@@ -98,6 +96,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@id/productImage"
+                android:setText="@{order.orderStatus}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
