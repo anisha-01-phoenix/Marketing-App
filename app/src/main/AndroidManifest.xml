@@ -41,18 +41,14 @@
         <activity android:name=".shopkeeper.MainActivity">
             android:name=".map.MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps" >
+        </activity>
         <activity
-            android:name=".customer.shops_items"
-            android:exported="true"
-            >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:name=".shopkeeper.shopkeepercontent"
+            android:exported="true" >
+        </activity>
+        <activity android:name=".classes.MainActivity"/>
+        <activity android:name=".activities.OrderList"/>
 
         </activity>
         <activity android:name=".VerifyPhoneNumber" />
@@ -69,7 +65,13 @@
 
         <activity android:name=".VerifyPhoneNumber"/>
         <activity android:name=".SignInActivity" />
-        <activity android:name=".FirstScreen" />
+        <activity android:name=".FirstScreen">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            </activity>
         <activity android:name=".SignUpActivity">
 
         </activity>
