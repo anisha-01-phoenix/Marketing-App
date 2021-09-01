@@ -8,6 +8,7 @@ public class Shopkeeper implements Serializable {
     private String shopName = "";
     private String address = "";
     private String phoneNo = "";
+    private String shopCategory = "";
     private long rating = 0;
     private boolean isWholeSeller = false;
     private Coordinates coordinates;
@@ -16,6 +17,14 @@ public class Shopkeeper implements Serializable {
     public Shopkeeper()
     {
 
+    }
+
+    public String getShopCategory() {
+        return shopCategory;
+    }
+
+    public void setShopCategory(String shopCategory) {
+        this.shopCategory = shopCategory;
     }
 
     public String getUniqueId() {

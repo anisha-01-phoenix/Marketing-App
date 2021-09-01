@@ -12,6 +12,7 @@
     tools:context=".SignInActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
@@ -20,16 +21,17 @@
         android:textStyle="bold" />
 
     <RelativeLayout
+        android:id="@+id/phone_relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@color/white"
-            android:hint="Enter your Email ...."
+            android:hint="Enter your phone Number ...."
             android:inputType="textEmailAddress"
             android:paddingLeft="60dp"
             android:textSize="15sp" />
@@ -40,32 +42,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/mail" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            android:hint="Enter your Password ...."
-            android:inputType="textPassword"
-            android:paddingLeft="60dp"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/lock" />
+            android:background="@drawable/ic_baseline_local_phone_24" />
 
     </RelativeLayout>
 
@@ -76,7 +53,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#27E32E"
-        android:text="Sign In"
+        android:text="Get OTP"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textColorHighlight="#30D336"
@@ -109,14 +86,5 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/forgotPasswordActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold" />
 
 </LinearLayout>
