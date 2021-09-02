@@ -98,7 +98,7 @@ public class Order implements Serializable {
         switch (orderStatus) {
             case 0:
                 textView.setText("Available");
-                textView.setTextColor(Color.GREEN);
+                textView.setTextColor(Color.CYAN);
                 break;
             case 1:
                 textView.setText("Pending");

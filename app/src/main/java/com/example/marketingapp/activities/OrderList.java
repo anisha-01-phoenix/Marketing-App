@@ -30,11 +30,10 @@ public class OrderList extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Orders");
 
-        Order order = new Order("5", "125", "127", 3, "13/08/2021", "4pm", "510", "sauce","2 bottles");
-        databaseReference.child(order.getUniqueId()).setValue(order);
+//        Order order = new Order("2", "125", "127", 0, "03/09/2021", "4pm", "500", "atta","5kg");
+//        databaseReference.child(order.getUniqueId()).setValue(order);
 
 
-        getSupportActionBar().hide();
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.add(new Fragment_Order(), "Order");
