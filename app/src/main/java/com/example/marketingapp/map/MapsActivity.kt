@@ -196,14 +196,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         locationSettingsResponseTask.addOnCompleteListener(OnCompleteListener {
             if(it.isSuccessful){
                     fusedLocationClient.lastLocation
-                        .addOnSuccessListener { location : Location? ->
+                        .addOnSuccessListener { location : Location ->
                             // Got last known location. In some rare situations this can be null.
                             val zoomlevel = 15f
 
                             val snippet = String.format(Locale.getDefault(),"Shop Type")
-                            val crntLatLng = location?.latitude?.let { LatLng(it,
-                                location.longitude
-                            ) }
+                            val crntLatLng =   LatLng(location.latitude, location.longitude)
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(crntLatLng,zoomlevel))
                         }
             }
