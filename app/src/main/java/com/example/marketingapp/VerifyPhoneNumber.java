@@ -3,14 +3,17 @@ package com.example.marketingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.marketingapp.classes.Shopkeeper;
 import com.example.marketingapp.classes.User;
 import com.example.marketingapp.databinding.ActivityVerifyPhoneNumberBinding;
+import com.example.marketingapp.shopkeeper.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -47,6 +50,10 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
         user = new User();
         shopkeeper = new Shopkeeper();
 
+        if (sharedPreferences.getString("signup_login", "").equalsIgnoreCase("signup")) {
+            binding.signUp.setText("Next");
+        }
+
         if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user"))
         {
             user = (User) getIntent().getSerializableExtra("user");
@@ -60,15 +67,6 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
 
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("en");
-
-
-        PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
-                .setPhoneNumber(phoneNumber)       // Phone number to verify
-                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                .setActivity(this)                 // Activity (for callback binding)
-                .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
 
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
@@ -90,6 +88,15 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
                 Log.d(TAG,s);
             }
         };
+
+        PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
+                .setPhoneNumber(phoneNumber)       // Phone number to verify
+                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                .setActivity(this)                 // Activity (for callback binding)
+                .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -103,13 +110,24 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
 
                             FirebaseUser muser = task.getResult().getUser();
 
-                            if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user"))
-                            {
+                            if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user")) {
                                 user.setUniqueId(muser.getUid());
-                            }
-                            else
-                            {
+                            } else {
                                 shopkeeper.setUniqueId(muser.getUid());
+                            }
+
+                            if (sharedPreferences.getString("signup_login", "").equalsIgnoreCase("signup")) {
+
+                                Intent intent = new Intent(VerifyPhoneNumber.this, SignUpActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            } else if (sharedPreferences.getString("signup_login", "").equalsIgnoreCase("login"))
+                            {
+                                Toast.makeText(VerifyPhoneNumber.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(VerifyPhoneNumber.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
                             }
 
                             // Update UI

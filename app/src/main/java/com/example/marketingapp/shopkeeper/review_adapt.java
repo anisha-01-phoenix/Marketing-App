@@ -34,14 +34,11 @@ public class review_adapt extends RecyclerView.Adapter<review_adapt.recviewholde
 
     @Override
     public void onBindViewHolder(@NonNull recviewholder holder, int position) {
-
-
-
-
+        
 
         holder.customername.setText("");
         holder.feedback.setText("");
-        holder.ratingBar.setRating(1);
+        holder.ratingBar.setRating(0);
 
 
     }
