@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -36,8 +37,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import java.util.*
 import java.util.jar.Manifest
 
@@ -48,7 +48,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
     private var marker : Marker? = null
     private val REQUEST_LOCATION_PERMISSION = 1
     private lateinit var fusedLocationClient : FusedLocationProviderClient
-    private lateinit var fabSetShopLocation : ExtendedFloatingActionButton
+    private lateinit var fabSetShopLocation : Button
     private lateinit var shopname : String
     private lateinit var shoptype : String
     private lateinit var shopkeeper : Shopkeeper
@@ -61,11 +61,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        fabSetShopLocation = findViewById(R.id.fab)
+        fabSetShopLocation = findViewById<Button>(R.id.fab)
         fabSetShopLocation.setOnClickListener(this)
 
         shopkeeper = intent.getSerializableExtra("shopkeeper") as Shopkeeper
         shopname = shopkeeper?.shopName ?: "Shop Name"
+        shoptype = shopkeeper?.shopCategory ?: "Shop Type"
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -111,7 +112,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
 
     private fun onMapClick(map : GoogleMap){
         map.setOnMapClickListener { latLng ->
-            val snippet = String.format(Locale.getDefault(),"Shop Type")
+            val snippet = String.format(Locale.getDefault(),shoptype)
 
             marker?.remove()
             marker = map.addMarker(
@@ -216,6 +217,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         progressDialog.setMessage("Setting your shop")
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.show()
+        shopkeeper.coordinates = coordinates
         var reff : DatabaseReference
         if(shopkeeper.isWholeSeller.equals(false))
             reff = FirebaseDatabase.getInstance().getReference("Shopkeepers")
@@ -228,7 +230,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
 
     override fun onMyLocationChange(p0: Location) {
         var shop : Location =  Location("New Shop")
-        // loop thru shops and set shop location to countered shops and implement if(p0.distanceTo(shop) < METERS_100)
+        // loop thru shops and set shop to countered shop's location and implement if(p0.distanceTo(shop) < METERS_100)
+        // check if user is shopkeeper -> show wholeseller and if user is customer -> show shops
+        val reff : DatabaseReference = FirebaseDatabase.getInstance().getReference("Shopkeepers")
+
+        val valueEventListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (child : DataSnapshot in snapshot.children){
+                    var coord : Coordinates = child.child("coordinates").value as Coordinates
+                    shop.latitude = coord.latitude
+                    shop.longitude = coord.longitude
+                    if(p0.distanceTo(shop) <= 200){
+                        val snippet = String.format(Locale.getDefault(),child.child("shopCategory").value as String)
+
+                        val latLng : LatLng = LatLng(shop.latitude,shop.longitude)
+                        val marker2 : Marker = map.addMarker( MarkerOptions().position(latLng).title(child.child("shopName").value as String).snippet(snippet))
+                        marker2.showInfoWindow()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        reff.addValueEventListener(valueEventListener)
     }
 }
 

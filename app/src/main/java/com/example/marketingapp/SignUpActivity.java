@@ -60,11 +60,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         user = new User();
         shopkeeper = new Shopkeeper();
 
-        if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user")) {
-            user = (User) getIntent().getSerializableExtra("user");
-        } else {
-            shopkeeper = (Shopkeeper) getIntent().getSerializableExtra("shopkeeper");
-        }
+//        if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user")) {
+//            user = (User) getIntent().getSerializableExtra("user");
+//        } else {
+//            shopkeeper = (Shopkeeper) getIntent().getSerializableExtra("shopkeeper");
+//        }
 
 //        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 //
@@ -86,6 +86,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 //            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0 ,0 ,locationListener);
 //            //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0 ,0 ,locationListener);
 //        }
+
+        binding.getOtp.setOnClickListener(this::onClick);
 
         sharedPreferences = getSharedPreferences("Market", MODE_PRIVATE);
         if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user")) {

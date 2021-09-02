@@ -7,7 +7,7 @@ public class Shopkeeper implements Serializable {
     private String uniqueId = "";
     private String shopName = "";
     private String address = "";
-    private String phoneNo = "";
+    private String phoneNo = "8690544086";
     private String shopCategory = "";
     private long rating = 0;
     private boolean isWholeSeller = false;
