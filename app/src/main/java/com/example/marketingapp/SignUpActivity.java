@@ -89,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         sharedPreferences = getSharedPreferences("Market", MODE_PRIVATE);
         if (sharedPreferences.getString("permission", "").equalsIgnoreCase("user")) {
-            Intent intent = new Intent(SignUpActivity.this, MapsActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, Dashboard.class);
             intent.putExtra("user", user);
             startActivity(intent);
         }

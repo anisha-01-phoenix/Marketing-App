@@ -4,4 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="location_required_error">Location Services must be enabled</string>
     <string name="set_shop_location">Set Shop Location</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <!-- Strings used for fragments for navigation -->
 </resources>

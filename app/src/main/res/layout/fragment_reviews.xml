@@ -14,21 +14,20 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="153dp"
-        android:layout_marginLeft="153dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginTop="565dp"
         android:background="@drawable/shopbuttonred"
         android:padding="5dp"
         android:text="Add Review"
         android:textColor="@color/white" />
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recReview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/addReview"
-        android:layout_marginTop="15dp"
-        android:id="@+id/recReview"/>
+        android:layout_marginTop="-570dp" />
 
 
 </RelativeLayout>

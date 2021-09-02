@@ -28,8 +28,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="192dp"
-        android:text="add"
         android:background="@drawable/tab_indicator"
-        android:textColor="@color/white"/>
+        android:text="add"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

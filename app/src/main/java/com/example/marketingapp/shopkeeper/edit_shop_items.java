@@ -26,20 +26,20 @@ ActivityEditShopItemsBinding binding;
         qt=intent.getStringExtra("qt");
 
 
-        binding.ediprodname.setText(name);
-        binding.editdesc.setText("write desc");
-        binding.editqt.setText(qt);
-        binding.editprice.setText(price);
+        binding.ediprodname.getEditText().setText(name);
+        binding.editdesc.getEditText().setText("write desc");
+        binding.editqt.getEditText().setText(qt);
+        binding.editprice.getEditText().setText(price);
         binding.buttonsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatabaseReference ref= FirebaseDatabase.getInstance().getReference("shopid").child(name);
                 ref.removeValue();
-                DatabaseReference ref11= FirebaseDatabase.getInstance().getReference("shopid").child(binding.ediprodname.getText().toString());
+                DatabaseReference ref11= FirebaseDatabase.getInstance().getReference("shopid").child(binding.ediprodname.getEditText().getText().toString());
                 modelcontent_fbase modelcontentFbase=new modelcontent_fbase();
-                modelcontentFbase.setName(binding.ediprodname.getText().toString());
-                modelcontentFbase.setPrice(binding.editprice.getText().toString());
-                modelcontentFbase.setQt_available(binding.editqt.getText().toString());
+                modelcontentFbase.setName(binding.ediprodname.getEditText().getText().toString());
+                modelcontentFbase.setPrice(binding.editprice.getEditText().getText().toString());
+                modelcontentFbase.setQt_available(binding.editqt.getEditText().getText().toString());
                 ref11.setValue(modelcontentFbase);
                 Toast.makeText(getApplicationContext(), "Details Updated", Toast.LENGTH_SHORT).show();
 
@@ -48,5 +48,8 @@ ActivityEditShopItemsBinding binding;
 
 
 
+    }
+
+    public void item_review(View view) {
     }
 }

@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".shopkeeper.shopkeepercontent"
     android:orientation="vertical">
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shopcontentrecv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/shopcontentrecv"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/shopcontentadditem"
@@ -21,7 +22,10 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="31dp"
+        android:backgroundTint="#9E2118"
+        android:elevation="100dp"
         android:onClick="addproducts"
-        android:src="@color/black" />
+        android:src="@drawable/ic_baseline_add_24"
+        app:tint="@color/white" />
 
 </RelativeLayout>
