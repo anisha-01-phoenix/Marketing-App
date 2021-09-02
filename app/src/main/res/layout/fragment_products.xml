@@ -23,6 +23,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+
+
             android:layout_width="21dp"
             android:layout_height="21dp"
             android:layout_gravity="center_vertical"
@@ -30,6 +32,7 @@
             android:src="@drawable/search" />
 
         <EditText
+            android:id="@+id/searchText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

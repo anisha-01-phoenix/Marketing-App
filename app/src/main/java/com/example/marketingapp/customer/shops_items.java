@@ -1,5 +1,6 @@
 package com.example.marketingapp.customer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -53,6 +54,17 @@ public class shops_items extends AppCompatActivity {
                 binding.ll.setVisibility(View.VISIBLE);
 
                 getSupportFragmentManager().beginTransaction().add(R.id.shopContainer, new products(), null).commit();
+
+            }
+        });
+
+
+        binding.checkCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+startActivity(new Intent(getApplicationContext(),checkCart.class));
+
 
             }
         });

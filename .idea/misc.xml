@@ -3,33 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
-        <entry key="..\:/Marketing App/Marketing-App/app/src/main/res/layout/activity_first_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Marketing App/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-
-
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/card_outline.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
-
-
+        <entry key="..\:/Marketing App/Marketing-App/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/layoutbg.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/llbg.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonproducts.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonred.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/drawable/shopbuttonwhite.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_all_shops.xml" value="0.13768115942028986" />
-        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.264" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_check_cart.xml" value="0.136" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.11956521739130435" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.1" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_place_order.xml" value="0.12409420289855072" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.152" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/check_cart_sr.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_add_review_customer.xml" value="0.2234375" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.1" />
-        <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_products.xml" value="0.12" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_products.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/fragment_reviews.xml" value="0.16799999999999998" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/llbg.xml" value="0.1" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/reviews_sr.xml" value="0.264" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/shop_item_sr.xml" value="0.176" />
+        <entry key="..\:/Marketing-App/app/src/main/res/layout/single_row_reviews_shop_items.xml" value="0.10364583333333334" />
         <entry key="..\:/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.1" />
-
-
-        <entry key="..\:/Marketing App/Marketing-App/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/card_outline.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_first_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -42,15 +39,10 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__order.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__pending.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment__processing.xml" value="0.24010416666666667" />
-
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.264" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
-
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.1" />
-
-
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_edit_shop_items.xml" value="0.184375" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shop_type.xml" value="0.24010416666666667" />
@@ -61,11 +53,6 @@
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_reviews_bottom_frag_shop.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_reviews_shop_items.xml" value="0.22604166666666667" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
-
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Saurav Kumar/AndroidStudioProjects/Marketing-App/app/src/main/res/layout/single_row_shopcontent.xml" value="0.25416666666666665" />
       </map>
     </option>
