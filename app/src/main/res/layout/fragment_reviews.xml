@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.Reviews"
-    android:background="#F8C8D8">
+    tools:context=".customer.Reviews">
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="159dp"
-        android:layout_marginLeft="159dp"
-        android:layout_marginTop="565dp"
-        android:background="@drawable/shopbuttonred"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/button"
+        android:gravity="center"
         android:padding="5dp"
-        android:text="Add Review"
-        android:textColor="@color/white" />
+        android:drawableStart="@drawable/ic_baseline_add_24"
+        android:text="    Add Review    "
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recReview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recReview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/addReview"
-        android:layout_marginTop="-570dp" />
+        android:layout_below="@id/addReview"/>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

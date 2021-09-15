@@ -27,7 +27,7 @@ ActivityEditShopItemsBinding binding;
 
 
         binding.ediprodname.getEditText().setText(name);
-        binding.editdesc.getEditText().setText("write desc");
+        binding.editdesc.getEditText().setText("Write Description");
         binding.editqt.getEditText().setText(qt);
         binding.editprice.getEditText().setText(price);
         binding.buttonsave.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ ActivityEditShopItemsBinding binding;
                 modelcontentFbase.setPrice(binding.editprice.getEditText().getText().toString());
                 modelcontentFbase.setQt_available(binding.editqt.getEditText().getText().toString());
                 ref11.setValue(modelcontentFbase);
-                Toast.makeText(getApplicationContext(), "Details Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Details Updated!", Toast.LENGTH_SHORT).show();
 
             }
         });

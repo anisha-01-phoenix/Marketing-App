@@ -64,7 +64,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:boxStrokeColor="@color/theme2"
                 app:boxStrokeWidth="3dp"
-                app:boxStrokeErrorColor="#F44336"
+                app:boxStrokeErrorColor="@color/error"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Product Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#650A0A"
+                    android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -91,7 +91,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:boxStrokeColor="@color/theme2"
                 app:boxStrokeWidth="3dp"
-                app:boxStrokeErrorColor="#F44336"
+                app:boxStrokeErrorColor="@color/error"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Product Description"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#650A0A"
+                    android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,7 +118,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:boxStrokeColor="@color/theme2"
                 app:boxStrokeWidth="3dp"
-                app:boxStrokeErrorColor="#F44336"
+                app:boxStrokeErrorColor="@color/error"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -130,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Product Quantity"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#650A0A"
+                    android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -145,7 +145,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:boxStrokeColor="@color/theme2"
                 app:boxStrokeWidth="3dp"
-                app:boxStrokeErrorColor="#F44336"
+                app:boxStrokeErrorColor="@color/error"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Product Price"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#650A0A"
+                    android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -173,7 +173,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:boxStrokeColor="@color/theme2"
                 app:boxStrokeWidth="3dp"
-                app:boxStrokeErrorColor="#F44336"
+                app:boxStrokeErrorColor="@color/error"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -185,7 +185,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Offer Price"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#650A0A"
+                    android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -195,15 +195,16 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonsave"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button"
             android:fontFamily="@font/button"
             android:text="  Update  "
             android:textColor="@color/white"
             android:padding="8dp"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:elevation="100dp"
+            android:layout_margin="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

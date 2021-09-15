@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8C8D8"
     tools:context=".customer.shops_items">
 
 
@@ -18,7 +17,7 @@
         tools:layout_editor_absoluteX="-16dp">
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/shopProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,13 +26,14 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
+            android:fontFamily="@font/button"
             android:background="@drawable/shopbuttonwhite"
             android:text="Products"
-            android:textColor="#A62121"
+            android:textColor="@color/theme"
             android:textSize="15dp"
             android:textStyle="bold" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/shopReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,6 +41,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/button"
             android:layout_weight="1"
             android:background="@drawable/shopbuttonred"
             android:text="Reviews"
@@ -75,19 +76,19 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/checkCart"
             android:layout_width="147dp"
             android:layout_height="74dp"
             android:layout_gravity="center_horizontal"
-
+            android:elevation="100dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/shopbuttonred"
             android:padding="10dp"
             android:text="Check Cart"
             android:textColor="@color/white"
             android:textSize="19sp"
-
+            android:fontFamily="@font/button"
             android:textStyle="bold" />
 
 

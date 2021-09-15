@@ -4,44 +4,51 @@
     android:layout_height="110dp">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="itemNAme"
-                android:layout_marginLeft="30dp"
-                android:id="@+id/name"/>
-
-            <Button
-                android:id="@+id/removeCart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:text="remove from cart" />
-
-
-        </LinearLayout>
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:fontFamily="@font/headings"
+            android:text="Item Name"
+            android:textColor="@color/dark"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_margin="6dp"
+            android:fontFamily="@font/text"
             android:text="price"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/price"/>
+            android:textColor="@color/theme"
+            android:textSize="18dp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/removeCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:padding="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/name"
+            android:textColor="@color/white"
+            android:fontFamily="@font/button"
+            android:drawableStart="@drawable/ic_baseline_remove_shopping_cart_24"
+            android:text="  remove from cart  " />
 
 
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

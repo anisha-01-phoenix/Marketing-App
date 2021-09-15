@@ -19,10 +19,11 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
-            android:text="username"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:text="Username"
+            android:textColor="@color/dark"
+            android:textSize="20sp"
             android:textStyle="bold"
+            android:fontFamily="@font/headings"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,8 +35,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="20dp"
             android:text="(Order id)"
-            android:textColor="#CA9494"
-            android:textSize="14sp"
+            android:padding="5dp"
+            android:textColor="@color/theme2"
+            android:fontFamily="@font/text"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/username"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,10 +51,10 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:layout_marginTop="20dp"
-
+            android:fontFamily="@font/text"
             android:text="In publishing and graphic design, Lorem ipsum is a
  placeholder text commonly used to ….. more."
-            android:textColor="#CA9494"
+            android:textColor="@color/theme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -66,8 +69,9 @@
             android:layout_marginRight="24dp"
             android:layout_marginBottom="4dp"
             android:text="19-7-21"
-            android:textColor="#CA9494"
-            android:textSize="14sp"
+            android:fontFamily="@font/button"
+            android:textColor="@color/error"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

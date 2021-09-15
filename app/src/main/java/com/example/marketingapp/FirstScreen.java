@@ -20,7 +20,6 @@ public class FirstScreen extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         binding = ActivityFirstScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         sharedPreferences = getSharedPreferences("Market",MODE_PRIVATE);
         editor = sharedPreferences.edit();
 

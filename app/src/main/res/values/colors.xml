@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="theme">#9E2118</color>
-    <color name="theme2">#FFB300</color>
-    <color name="theme3">#650A0A</color>
+    <color name="theme2">#E53935</color>
+    <color name="error">#F44336</color>
+    <color name="dark">#650A0A</color>
+    <color name="light">#F19E97</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

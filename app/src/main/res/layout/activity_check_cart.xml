@@ -7,24 +7,31 @@
     tools:context=".customer.checkCart">
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/finalize_order"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="165dp"
-        android:layout_marginRight="165dp"
-        android:gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:elevation="100dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/button"
         android:text="Proceed" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartItems"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/finalize_order"
+        android:layout_above="@id/finalize_order"
         android:layout_marginTop="30dp"
+        android:background="@drawable/bg2"
+        android:paddingTop="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 </RelativeLayout>

@@ -1,41 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/llbg"
+    android:padding="10dp"
     tools:context=".shopkeeper.bottom_frag_add_items">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Product Name"
-        android:id="@+id/prodnamefrag"/>
+        android:layout_height="50dp"
+        app:errorEnabled="true"
+        android:layout_margin="8dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="@color/theme2"
+        app:boxStrokeWidth="3dp"
+        app:boxStrokeErrorColor="@color/error"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:id="@+id/prodnamefrag">
 
-    <EditText
-        android:id="@+id/prodprice"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="112dp"
-        android:hint="price" />
+        android:layout_height="50dp"
+        app:errorEnabled="true"
+        android:layout_margin="8dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="@color/theme2"
+        app:boxStrokeWidth="3dp"
+        app:boxStrokeErrorColor="@color/error"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:id="@+id/prodprice">
 
-    <EditText
-        android:id="@+id/prodqtavailable"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="53dp"
-        android:hint="qtavailable" />
+        android:layout_height="50dp"
+        app:errorEnabled="true"
+        android:layout_margin="8dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="@color/theme2"
+        app:boxStrokeWidth="3dp"
+        app:boxStrokeErrorColor="@color/error"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:id="@+id/prodqtavailable">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Quantity Available"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addprodcts_frag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="192dp"
-        android:text="add"
-        android:id="@+id/addprodcts_frag"
-       />
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_baseline_add_24"
+        android:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:text="   ADD TO MY SHOP RECORDS  " />
 
 
-</RelativeLayout>
+</LinearLayout>

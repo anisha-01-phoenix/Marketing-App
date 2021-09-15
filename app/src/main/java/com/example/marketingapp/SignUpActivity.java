@@ -112,8 +112,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                 if (check_empty()) {
                     if (sharedPreferences.getString("permission", "").equalsIgnoreCase("shopkeeper")) {
-                        shopkeeper.setAddress(binding.address.getText().toString());
-                        shopkeeper.setShopName(binding.shopNAme.getText().toString());
+                        shopkeeper.setAddress(binding.address.getEditText().getText().toString());
+                        shopkeeper.setShopName(binding.shopNAme.getEditText().getText().toString());
                         if ( binding.spinner2.getSelectedItem().toString().equalsIgnoreCase("WholeSeller") )
                             shopkeeper.setWholeSeller(true);
                         shopkeeper.setShopCategory(binding.spinner1.getSelectedItem().toString());
@@ -131,11 +131,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         if (sharedPreferences.getString("permission", "").equalsIgnoreCase("shopkeeper")) {
 
-            if (binding.shopNAme.getText().toString().isEmpty()) {
+            if (binding.shopNAme.getEditText().getText().toString().isEmpty()) {
                 binding.shopNAme.setError("Enter the shop Name");
+                binding.shopNAme.requestFocus();
                 return false;
-            } else if (binding.address.getText().toString().isEmpty()) {
+            } else if (binding.address.getEditText().getText().toString().isEmpty()) {
                 binding.address.setError("Enter the shop Address");
+                binding.address.requestFocus();
                 return false;
             } else if (binding.spinner1.getSelectedItem() == null || binding.spinner1.getSelectedItem().toString().equals("Select Category")) {
                 TextView errorText = (TextView)binding.spinner1.getSelectedView();
