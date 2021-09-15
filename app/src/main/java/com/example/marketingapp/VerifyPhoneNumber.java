@@ -148,8 +148,13 @@ public class VerifyPhoneNumber extends AppCompatActivity implements View.OnClick
         switch (v.getId())
         {
             case R.id.signUp:
-
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(veri,binding.otp.getText().toString());
+                String otp=binding.otp1.getText().toString()+
+                        binding.otp2.getText().toString()+
+                        binding.otp3.getText().toString()+
+                        binding.otp4.getText().toString()+
+                        binding.otp5.getText().toString()+
+                        binding.otp6.getText().toString();
+                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(veri,otp);
                 signInWithPhoneAuthCredential(credential);
 
                 break;

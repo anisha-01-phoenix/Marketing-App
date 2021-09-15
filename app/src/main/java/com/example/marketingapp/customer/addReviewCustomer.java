@@ -32,7 +32,7 @@ public class addReviewCustomer extends BottomSheetDialogFragment {
 
 
                 String orderid = binding.orderid.getText().toString().trim();
-                String body = binding.review.getText().toString().trim();
+                String body = binding.review.getEditText().getText().toString().trim();
 
                 if (orderid.isEmpty()) {
                     binding.orderid.setError("Can't be empty");

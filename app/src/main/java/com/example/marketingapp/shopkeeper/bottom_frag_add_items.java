@@ -31,10 +31,10 @@ FragmentBottomFragAddItemsBinding binding;
             public void onClick(View v) {
                 DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference("shopid");
                 modelcontent_fbase modelcontentFbase=new modelcontent_fbase();
-                modelcontentFbase.setPrice(binding.prodprice.getText().toString());
-                modelcontentFbase.setName(binding.prodnamefrag.getText().toString());
-                modelcontentFbase.setQt_available(binding.prodqtavailable.getText().toString());
-                ref1.child(binding.prodnamefrag.getText().toString()).setValue(modelcontentFbase);
+                modelcontentFbase.setPrice(binding.prodprice.getEditText().getText().toString());
+                modelcontentFbase.setName(binding.prodnamefrag.getEditText().getText().toString());
+                modelcontentFbase.setQt_available(binding.prodqtavailable.getEditText().getText().toString());
+                ref1.child(binding.prodnamefrag.getEditText().getText().toString()).setValue(modelcontentFbase);
                 dismiss();
             }
         });
