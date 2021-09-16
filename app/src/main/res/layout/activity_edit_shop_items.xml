@@ -4,140 +4,234 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".shopkeeper.edit_shop_items">
 
-    <ImageView
-        android:id="@+id/itemimage"
-        android:layout_width="wrap_content"
-        android:layout_height="189dp"
-        android:src="@drawable/prof"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="63dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Name"
-        android:textColor="#70131313"
-        app:layout_constraintBottom_toBottomOf="@+id/ediprodname"
-        app:layout_constraintEnd_toStartOf="@+id/ediprodname"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/ediprodname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemimage" />
-
-    <EditText
-        android:id="@+id/editdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ediprodname"
-        app:layout_constraintVertical_bias="0.091" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="58dp"
-        android:layout_height="25dp"
-        android:text="Description"
-        android:textColor="#70131313"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editdesc"
-        app:layout_constraintHorizontal_bias="0.427"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.132" />
-
-    <EditText
-        android:id="@+id/editqt"
-        android:layout_width="137dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="28dp"
-        android:ems="10"
-        android:hint="quantity"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <EditText
-        android:id="@+id/editprice"
-        android:layout_width="136dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="24dp"
-        android:ems="10"
-        android:hint="price"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/editdesc"
-        app:layout_constraintVertical_bias="0.128" />
-
-    <Button
-        android:id="@+id/buttonsave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemimage"
-        app:layout_constraintVertical_bias="0.669" />
-
-    <TextView
-        android:id="@+id/Reviews"
-        android:layout_width="189dp"
-        android:layout_height="46dp"
-        android:text="Reviews On this Item"
+        android:fontFamily="@font/headings"
         android:gravity="center"
+        android:text="Shop Item"
+        android:textSize="30dp"
+        android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsave" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editofferprice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Offer Price"
-        app:layout_constraintBottom_toTopOf="@+id/buttonsave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemimage"
-        app:layout_constraintVertical_bias="0.944" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg2">
+
+        <ImageView
+            android:id="@+id/itemimage"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/atta"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.036" />
+
+
+        <LinearLayout
+            android:id="@+id/llayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonsave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemimage">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_margin="8dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="@color/theme2"
+                app:boxStrokeWidth="3dp"
+                app:boxStrokeErrorColor="@color/error"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:id="@+id/ediprodname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark"
+                    android:fontFamily="@font/text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_margin="8dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="@color/theme2"
+                app:boxStrokeWidth="3dp"
+                app:boxStrokeErrorColor="@color/error"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:id="@+id/editdesc">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Description"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark"
+                    android:fontFamily="@font/text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_margin="8dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="@color/theme2"
+                app:boxStrokeWidth="3dp"
+                app:boxStrokeErrorColor="@color/error"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:id="@+id/editqt">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Quantity"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark"
+                    android:fontFamily="@font/text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_margin="8dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="@color/theme2"
+                app:boxStrokeWidth="3dp"
+                app:boxStrokeErrorColor="@color/error"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:id="@+id/editprice">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Price"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark"
+                    android:fontFamily="@font/text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_margin="8dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="@color/theme2"
+                app:boxStrokeWidth="3dp"
+                app:boxStrokeErrorColor="@color/error"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:id="@+id/editofferprice">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Offer Price"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark"
+                    android:fontFamily="@font/text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonsave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:fontFamily="@font/button"
+            android:text="  Update  "
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:textSize="18dp"
+            android:elevation="100dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.862"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/text"
+            android:gravity="center"
+            android:text="Reviews On this Item"
+            android:textColor="#650A0A"
+            android:textSize="16dp"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:onClick="item_review"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonsave"
+            app:layout_constraintVertical_bias="0.609" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

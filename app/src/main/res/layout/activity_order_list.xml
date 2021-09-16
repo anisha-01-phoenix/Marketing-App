@@ -1,32 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".activities.OrderList"
-    android:background="@drawable/orders">
+    android:background="@drawable/bg">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="170dp"
-        app:tabMode="fixed"
-        android:background="@color/white"
-        app:tabGravity="center"
-        app:tabIndicatorGravity="stretch"
-        app:tabTextColor="@color/black"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorAnimationMode="elastic"
-        app:tabIndicator="@drawable/tab_indicator"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/headings"
+        android:gravity="center"
+        android:text="Orders"
+        android:textColor="@color/white"
+        android:textSize="32dp"
+        android:textStyle="bold" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg2"
+        android:layout_marginTop="100dp">
 
-</LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:tabMode="fixed"
+            android:background="#FFFFFF"
+            app:tabGravity="center"
+            android:layout_marginTop="30dp"
+            app:tabIndicatorGravity="stretch"
+            app:tabTextColor="#9E2118"
+            app:tabSelectedTextColor="@color/white"
+            app:tabRippleColor="#F8ACA7"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorColor="#9E2118"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

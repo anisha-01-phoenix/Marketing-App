@@ -1,90 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3245ED"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingHorizontal="30dp"
-    android:textAlignment="center"
+    android:background="@drawable/bg"
     tools:context=".SignInActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/headings"
+        android:gravity="center"
+        android:text="Login"
         android:textColor="@color/white"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <RelativeLayout
-        android:id="@+id/phone_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            android:hint="Enter your phone Number ...."
-            android:inputType="textEmailAddress"
-            android:paddingLeft="60dp"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/ic_baseline_local_phone_24" />
-
-    </RelativeLayout>
-
-
-    <Button
-        android:id="@+id/signIn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#27E32E"
-        android:text="Get OTP"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textColorHighlight="#30D336"
-        android:textSize="35sp" />
-
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/bg2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="40dp"
+        android:textAlignment="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/phoneotp" />
+
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/text"
+            android:gravity="center"
+            android:text="Enter Your Phone Number and an OTP will be sent in that number"
+            android:textColor="@color/theme" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shopbuttonwhite"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/cpp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_textGravity="CENTER"
+                app:ccpDialog_textColor="@color/theme"
+                app:ccp_contentColor="@color/theme"/>
+
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/text"
+                android:hint=" Phone Number"
+                android:inputType="number"
+                android:textColor="@color/theme"
+                android:textColorHint="@color/light"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have a account ?"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:drawableEnd="@drawable/ic_baseline_double_arrow_24"
+            android:elevation="100dp"
+            android:fontFamily="@font/button"
+            android:padding="8dp"
+            android:text="  get otp  "
             android:textColor="@color/white"
             android:textSize="18dp" />
 
-        <TextView
-            android:id="@+id/signUpActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
     </LinearLayout>
 
-</LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUpActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/button"
+        android:text="SIGNUP"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signinActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/button"
+        android:text="SIGNIN"
+        android:textColor="@color/light"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
