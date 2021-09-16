@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     tools:context=".map.MapsActivity" >
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <Button
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +19,5 @@
         android:text="@string/set_shop_location"
         android:textSize="20sp"
         android:backgroundTint="@color/purple_200"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 </fragment>
