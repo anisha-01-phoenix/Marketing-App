@@ -3,10 +3,13 @@ package com.example.marketingapp.map
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +21,7 @@ import androidx.core.content.ContextCompat
 import com.example.marketingapp.R
 import com.example.marketingapp.classes.Coordinates
 import com.example.marketingapp.classes.Shopkeeper
+import com.example.marketingapp.classes.User
 import com.example.marketingapp.databinding.ActivityMapsBinding
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -51,8 +55,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
     private lateinit var fabSetShopLocation : Button
     private lateinit var shopname : String
     private lateinit var shoptype : String
-    private lateinit var shopkeeper : Shopkeeper
+    private var shopkeeper : Shopkeeper? = null
     private lateinit var coordinates: Coordinates
+    private var usertype : Int? = null // 1 -> shopkeeper, 2 -> customer
+    private  lateinit var lastLocation : Location
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,9 +70,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         fabSetShopLocation = findViewById<Button>(R.id.fab)
         fabSetShopLocation.setOnClickListener(this)
 
-        shopkeeper = intent.getSerializableExtra("shopkeeper") as Shopkeeper
-        shopname = shopkeeper?.shopName ?: "Shop Name"
-        shoptype = shopkeeper?.shopCategory ?: "Shop Type"
+        if(intent.hasExtra("shopkeeper")) {
+            shopkeeper = intent.getSerializableExtra("shopkeeper") as Shopkeeper
+            shopname = shopkeeper?.shopName ?: "Shop Name"
+            shoptype = shopkeeper?.shopCategory ?: "Shop Type"
+            usertype = 1
+        }else {
+            usertype = 2
+        }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -88,8 +99,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
 
-        onMapClick(map)
         requestPermission()
+        if(usertype==1){
+            onMapClick(map)
+        }else {
+            onMyLocationChange(lastLocation)
+        }
     }
 
     @SuppressLint("MissingSuperCall")
@@ -195,19 +210,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         }
         locationSettingsResponseTask.addOnCompleteListener(OnCompleteListener {
             if(it.isSuccessful){
-                    fusedLocationClient.lastLocation
-                        .addOnSuccessListener { location : Location ->
-                            // Got last known location. In some rare situations this can be null.
-                            val zoomlevel = 15f
-
-                            val snippet = String.format(Locale.getDefault(),"Shop Type")
-                            val crntLatLng =   LatLng(location.latitude, location.longitude)
-                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(crntLatLng,zoomlevel))
-                        }
+                fusedLocationClient?.lastLocation!!.addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful && task.result != null) {
+                        lastLocation = task.result
+                        val zoomlevel = 15f
+                        val crntLatLng =   LatLng(lastLocation.latitude, lastLocation.longitude)
+                        map.moveCamera(CameraUpdateFactory.newLatLngZoom(crntLatLng,zoomlevel))
+                    }
+                    else {
+                        Log.w(TAG, "getLastLocation:exception", task.exception)
+                        Toast.makeText(this,"No location detected. Make sure location is enabled on the device.",Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         })
     }
 
+    // fab clicked
     override fun onClick(v: View?) {
         // function for fab
         val progressDialog : ProgressDialog = ProgressDialog(this)
@@ -215,9 +234,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         progressDialog.setMessage("Setting your shop")
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.show()
-        shopkeeper.coordinates = coordinates
+        shopkeeper?.coordinates = coordinates
         var reff : DatabaseReference
-        if(shopkeeper.isWholeSeller.equals(false))
+        if(shopkeeper?.isWholeSeller!!.equals(false))
             reff = FirebaseDatabase.getInstance().getReference("Shopkeepers")
         else
             reff = FirebaseDatabase.getInstance().getReference("Wholesellers")
