@@ -24,10 +24,8 @@
         android:textColorHint="@color/light"
         android:background="@drawable/shopbuttonwhite"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/orderid">
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/review"
@@ -44,6 +42,7 @@
             app:boxStrokeColor="@color/theme2"
             app:boxStrokeErrorColor="@color/error"
             app:boxStrokeWidth="3dp"
+            android:layout_below="@id/orderid"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,22 +54,36 @@
                 android:textColor="@color/dark" />
 
         </com.google.android.material.textfield.TextInputLayout>
-    </ScrollView>
 
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/review"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="85dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:progressTint="#E8B009"
+        android:rating="2.5"
+        android:stepSize="01" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ratingBar"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button"
-        android:text="Add Reviews"
         android:drawableStart="@drawable/ic_baseline_add_24"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:padding="8dp"
-        android:textSize="18dp"
         android:fontFamily="@font/button"
-        android:textColor="@color/white" />
+        android:padding="8dp"
+        android:text="Add Reviews"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
 
 </RelativeLayout>

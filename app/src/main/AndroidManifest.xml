@@ -21,11 +21,7 @@
             android:exported="true"
             android:screenOrientation="portrait">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
@@ -63,7 +59,15 @@
         <activity
             android:name=".customer.shops_items"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
         <activity
             android:name=".activities.OrderList"
             android:screenOrientation="portrait" />
@@ -79,7 +83,11 @@
         <activity
             android:name=".customer.allShops"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+
+
+        </activity>
         <activity
             android:name=".SignUpActivity"
             android:screenOrientation="portrait">
