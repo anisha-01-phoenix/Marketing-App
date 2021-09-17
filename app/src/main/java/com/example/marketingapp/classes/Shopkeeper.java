@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Shopkeeper implements Serializable {
 
-    private String uniqueId = "";
-    private String shopName = "";
-    private String address = "";
-    private String phoneNo = "8690544086";
-    private String shopCategory = "";
+    private String uniqueId ;
+    private String shopName ;
+    private String address ;
+    private String phoneNo ;
+    private String shopCategory ;
     private long rating = 0;
     private boolean isWholeSeller = false;
     private Coordinates coordinates;
@@ -17,6 +17,16 @@ public class Shopkeeper implements Serializable {
     public Shopkeeper()
     {
 
+    }
+
+    public Shopkeeper(String uniqueId, String shopName, String address, String phoneNo, String shopCategory, long rating, boolean isWholeSeller) {
+        this.uniqueId = uniqueId;
+        this.shopName = shopName;
+        this.address = address;
+        this.phoneNo = phoneNo;
+        this.shopCategory = shopCategory;
+        this.rating = rating;
+        this.isWholeSeller = isWholeSeller;
     }
 
     public String getShopCategory() {

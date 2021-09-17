@@ -17,6 +17,7 @@
         android:text="Login"
         android:textColor="@color/white"
         android:textSize="30dp"
+        android:transitionName="heading"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +101,20 @@
             android:textSize="18dp" />
 
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:padding="5dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading"
+            android:visibility="gone"/>
+
+
+
     </LinearLayout>
 
 
@@ -111,6 +126,7 @@
         android:background="@android:color/transparent"
         android:fontFamily="@font/button"
         android:text="SIGNUP"
+        android:transitionName="signup"
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,13 +134,14 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signinActivity"
+        android:id="@+id/thisSignin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/button"
         android:text="SIGNIN"
+        android:transitionName="signin"
         android:textColor="@color/light"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
