@@ -10,14 +10,21 @@
     android:layout_height="match_parent"
     tools:context=".map.MapsActivity" >
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:drawableTint="@color/white"
         android:textColor="@color/white"
         android:text="@string/set_shop_location"
-        android:textSize="20sp"
-        android:backgroundTint="@color/purple_200"
+        android:textSize="15dp"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="@drawable/button"
+        android:fontFamily="@font/button"
         android:visibility="gone" />
 </fragment>
+

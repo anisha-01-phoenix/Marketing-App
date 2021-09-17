@@ -18,6 +18,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.marketingapp.Dashboard
 import com.example.marketingapp.R
 import com.example.marketingapp.classes.Coordinates
 import com.example.marketingapp.classes.Shopkeeper
@@ -42,6 +43,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import es.dmoral.toasty.Toasty
 import java.util.*
 import java.util.jar.Manifest
 
@@ -213,13 +215,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
                 fusedLocationClient?.lastLocation!!.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful && task.result != null) {
                         lastLocation = task.result
-                        val zoomlevel = 15f
+                        val zoomlevel = 25f
                         val crntLatLng =   LatLng(lastLocation.latitude, lastLocation.longitude)
                         map.moveCamera(CameraUpdateFactory.newLatLngZoom(crntLatLng,zoomlevel))
                     }
                     else {
                         Log.w(TAG, "getLastLocation:exception", task.exception)
-                        Toast.makeText(this,"No location detected. Make sure location is enabled on the device.",Toast.LENGTH_SHORT).show()
+                        Toasty.error(this,"No location detected. Make sure location is enabled on the device.").show()
                     }
                 }
             }
@@ -234,15 +236,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         progressDialog.setMessage("Setting your shop")
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.show()
+        var mAuth : FirebaseAuth = FirebaseAuth.getInstance()
+        var uid = mAuth.uid
         shopkeeper?.coordinates = coordinates
         var reff : DatabaseReference
         if(shopkeeper?.isWholeSeller!!.equals(false))
-            reff = FirebaseDatabase.getInstance().getReference("Shopkeepers")
+            reff = FirebaseDatabase.getInstance().getReference("Shopkeeper").child(uid!!)
         else
-            reff = FirebaseDatabase.getInstance().getReference("Wholesellers")
+            reff = FirebaseDatabase.getInstance().getReference("Wholesellers").child(uid!!)
 
-        reff.push().setValue(shopkeeper)
+        reff.setValue(coordinates)
         progressDialog.cancel()
+        val intent = Intent(this, Dashboard::class.java)
+        startActivity(intent)
     }
 
     override fun onMyLocationChange(p0: Location) {

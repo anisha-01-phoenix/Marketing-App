@@ -62,9 +62,6 @@
         android:icon="@drawable/ic_baseline_local_grocery_store_24"
         android:title="Wholesellers"/>
 
-    <item android:id="@+id/s_map"
-        android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Maps"/>
 
     <item  android:title="Settings">
 
@@ -83,6 +80,10 @@
         </menu>
 
     </item>
+
+    <item android:title="Logout"
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_logout_24"/>
 
 
 
