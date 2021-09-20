@@ -8,6 +8,9 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,18 +20,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
+            android:name=".customer.Review"
+            android:exported="true" />
+        <activity
+            android:name=".customer.Customer_Orders"
+            android:exported="true" />
+        <activity
             android:name=".activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-
-
-          <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -46,39 +51,33 @@
             android:name=".shopkeeper.edit_shop_items"
             android:exported="true"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".CustomerSignUp"
-            android:exported="true" 
-            android:screenOrientation="portrait"/>
-
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".shopkeeper.shop_type"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".shopkeeper.shopkeepercontent"
-            android:exported="true"                   
-            android:screenOrientation="portrait"/>
-
-
-        <activity android:name=".map.MapsActivity"
-            android:exported="true" >
-      </activity>
-
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.MapsActivity"
+            android:exported="true" />
         <activity
             android:name=".shopkeeper.MainActivity"
             android:screenOrientation="portrait" />
-
-       <activity
+        <activity
             android:name=".customer.shops_items"
             android:exported="true"
-
-            android:screenOrientation="portrait"/>
-
-          
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.OrderList"
+            android:name=".customer.placeOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".customer.checkCart"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VerifyPhoneNumber"
@@ -88,26 +87,18 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".FirstScreen"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".customer.allShops"
             android:exported="true"
-            android:screenOrientation="portrait">
-
-
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignUpActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Dashboard"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
-
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

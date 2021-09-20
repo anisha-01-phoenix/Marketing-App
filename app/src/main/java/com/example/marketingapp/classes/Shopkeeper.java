@@ -9,7 +9,7 @@ public class Shopkeeper implements Serializable {
     private String address ;
     private String phoneNo ;
     private String shopCategory ;
-    private long rating = 0;
+    private float rating = 0.0F;
     private boolean isWholeSeller = false;
     private Coordinates coordinates;
 
@@ -19,7 +19,7 @@ public class Shopkeeper implements Serializable {
 
     }
 
-    public Shopkeeper(String uniqueId, String shopName, String address, String phoneNo, String shopCategory, long rating, boolean isWholeSeller) {
+    public Shopkeeper(String uniqueId, String shopName, String address, String phoneNo, String shopCategory, float rating, boolean isWholeSeller) {
         this.uniqueId = uniqueId;
         this.shopName = shopName;
         this.address = address;
@@ -69,11 +69,11 @@ public class Shopkeeper implements Serializable {
         this.phoneNo = phoneNo;
     }
 
-    public long getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(long rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 

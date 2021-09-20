@@ -1,22 +1,41 @@
 package com.example.marketingapp.customer;
 
+import android.graphics.Color;
+import android.widget.TextView;
+
+import androidx.databinding.BindingAdapter;
+
 public class cartmodel {
 
-    String name,status,price,qnty;
+    String price,qnty,shopid,customerid,productid,date;
+    int status;
 
-    public String getName() {
-        return name;
+    public cartmodel() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public cartmodel(String price, String qnty, String shopid, String customerid, String productid, String date, int status) {
+        this.price = price;
+        this.qnty = qnty;
+        this.shopid = shopid;
+        this.customerid = customerid;
+        this.productid = productid;
+        this.date = date;
+        this.status = status;
     }
 
-    public String getStatus() {
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -35,4 +54,31 @@ public class cartmodel {
     public void setQnty(String qnty) {
         this.qnty = qnty;
     }
+
+    public String getShopid() {
+        return shopid;
+    }
+
+    public void setShopid(String shopid) {
+        this.shopid = shopid;
+    }
+
+    public String getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(String customerid) {
+        this.customerid = customerid;
+    }
+
+    public String getProductid() {
+        return productid;
+    }
+
+    public void setProductid(String productid) {
+        this.productid = productid;
+    }
+
+
+
 }

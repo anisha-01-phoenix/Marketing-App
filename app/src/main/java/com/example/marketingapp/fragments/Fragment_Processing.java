@@ -11,9 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.marketingapp.R;
-import com.example.marketingapp.adapters.OrdersAdapter;
 import com.example.marketingapp.classes.Order;
+import com.example.marketingapp.customer.cartmodel;
+import com.example.marketingapp.databinding.FragmentOrderBinding;
+import com.example.marketingapp.databinding.FragmentPendingBinding;
 import com.example.marketingapp.databinding.FragmentProcessingBinding;
+import com.example.marketingapp.shopkeeper.OrderAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,9 +30,8 @@ import java.util.ArrayList;
 
 public class Fragment_Processing extends Fragment {
     FragmentProcessingBinding fragmentProcessingBinding;
-    OrdersAdapter adapter;
-    DatabaseReference reference;
-    ArrayList<Order> list ;
+    OrderAdapter adapter;
+    ArrayList<cartmodel> data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,19 +39,25 @@ public class Fragment_Processing extends Fragment {
 
         fragmentProcessingBinding=FragmentProcessingBinding.inflate(getLayoutInflater());
         View view=fragmentProcessingBinding.getRoot();
-        reference = FirebaseDatabase.getInstance().getReference("Orders");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        String uid= user.getUid();
+        data=new ArrayList<>();
         fragmentProcessingBinding.rvProcessing.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = new ArrayList<>();
-        reference.addValueEventListener(new ValueEventListener() {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(uid);
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Order order = dataSnapshot.getValue(Order.class);
-                    if (order.getOrderStatus()==2)
-                        list.add(order);
+                data.clear();
+                for (DataSnapshot s:snapshot.getChildren())
+                {
+                    cartmodel model=s.getValue(cartmodel.class);
+                    if (model.getStatus()==2)
+                    data.add(model);
                 }
-                adapter = new OrdersAdapter(getContext(), list);
+                adapter =new OrderAdapter(data, getActivity());
                 fragmentProcessingBinding.rvProcessing.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -57,8 +67,6 @@ public class Fragment_Processing extends Fragment {
 
             }
         });
-
-
 
         return view;
     }

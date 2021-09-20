@@ -30,6 +30,7 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/gradient.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/gradient2.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_home_work_24.xml" value="0.2703125" />
@@ -38,9 +39,17 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_password.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_pending_actions_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_remove_shopping_cart_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_shop_two_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_shopping_basket_24.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_task_alt_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_baseline_upload_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/layoutbg.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/otp.xml" value="0.2703125" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/outline.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/shopbuttonred.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/shopbuttonwhite.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/start.xml" value="0.2703125" />
@@ -48,6 +57,7 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/drawable/tab_indicator.xml" value="0.2703125" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_all_shops.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_check_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_customer_orders.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_customer_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_edit_shop_items.xml" value="0.25025641025641027" />
@@ -56,7 +66,8 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_order_list.xml" value="0.264" />
-        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_place_order.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_place_order.xml" value="0.264" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_review.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_shop_type.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_shopkeepercontent.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/activity_shops_items.xml" value="0.25025641025641027" />
@@ -72,11 +83,15 @@
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_add_review_customer.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_frag_add_items.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_customer_orders.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_favourites.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_products.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/fragment_reviews_bottom_frag_shop.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/header.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/order_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/product_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/product_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/reviews_sr.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/shop_item_sr.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/ANISHA/StudioProjects/Marketing-App/app/src/main/res/layout/single_row_reviews_shop_items.xml" value="0.25416666666666665" />

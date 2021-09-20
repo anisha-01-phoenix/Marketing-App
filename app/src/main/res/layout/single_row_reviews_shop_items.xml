@@ -49,10 +49,10 @@
             android:id="@+id/rate_"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
             android:layout_toRightOf="@id/customername"
-            android:outlineSpotShadowColor="@color/theme"
+            android:numStars="5"
             android:outlineAmbientShadowColor="@color/light"
+            android:outlineSpotShadowColor="@color/theme"
             android:stepSize="0.5" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

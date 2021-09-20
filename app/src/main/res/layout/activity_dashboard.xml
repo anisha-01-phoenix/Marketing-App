@@ -23,8 +23,81 @@
 
 
         <FrameLayout
+            android:id="@+id/flayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/searchview"
+                android:layout_margin="5dp"
+                android:queryHint="Search Products"
+                android:visibility="gone"
+                android:background="@drawable/otp"
+                android:padding="5dp"/>
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_rawRes="@raw/rv_loading"
+                app:lottie_loop="true"
+                android:layout_margin="-50dp"
+                app:lottie_autoPlay="true"
+                android:id="@+id/view1"
+                android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_customer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="60dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="30dp"
+                android:paddingRight="5dp"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" my cart"
+                android:textAllCaps="true"
+                android:id="@+id/viewcart"
+                android:background="@drawable/button"
+                android:fontFamily="@font/button"
+                android:textSize="16dp"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_gravity="bottom|right"
+                android:padding="8dp"
+                android:layout_margin="10dp"
+                android:drawableStart="@drawable/ic_baseline_local_grocery_store_24"
+                android:drawableTint="@color/white"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" VIEW MY STORE"
+                android:id="@+id/mystore"
+                android:background="@drawable/button"
+                android:fontFamily="@font/button"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_gravity="bottom|right"
+                android:padding="8dp"
+                android:layout_margin="10dp"
+                android:drawableStart="@drawable/ic_baseline_local_grocery_store_24"
+                android:drawableTint="@color/white"
+                android:visibility="gone"
+                android:onClick="showShopProduct"/>
 
 
         </FrameLayout>

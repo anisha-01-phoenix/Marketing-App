@@ -146,8 +146,7 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                                 Toasty.success(getApplicationContext(), "Registered Successfully!").show();
                                 if (sharedPreferences.getString(Constants.permission, "").equalsIgnoreCase("user")) {
 //                                user.setUniqueId(muser.getUid());
-                                    String customerID = uid.substring(0, 4);
-                                    user = new User(customerID, phoneNumber, Customername, customerplace);
+                                    user = new User(uid, phoneNumber, Customername, customerplace);
                                     DatabaseReference reference = database.getReference("Customers");
                                     reference.child(uid).setValue(user);
                                     DatabaseReference reference1 = database.getReference("CustomerPhNo");
@@ -161,8 +160,7 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                                 } else {
 //                                shopkeeper.setUniqueId(muser.getUid());
 //                                shopkeeper=new Shopkeeper(uid,"","",phoneNumber,"",0,false);
-                                    String shopID = uid.substring(0, 4);
-                                    shopkeeper = new Shopkeeper(shopID, shopname, shopaddress, phoneNumber, shoptype, 0, wholesell);
+                                    shopkeeper = new Shopkeeper(uid, shopname, shopaddress, phoneNumber, shoptype, 0, wholesell);
                                     DatabaseReference reference = database.getReference("Shopkeeper");
                                     reference.child(uid).setValue(shopkeeper);
                                     DatabaseReference reference1 = database.getReference("ShopPhNo");

@@ -2,10 +2,15 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:layout_margin="15dp"
-    android:background="@color/white"
-    android:padding="15dp">
+    android:layout_height="wrap_content"
+    android:id="@+id/cv_review"
+    android:layout_margin="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:elevation="100dp"
+    android:padding="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="30dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,64 +21,73 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="8dp"
             android:text="Username"
-            android:textColor="@color/dark"
+            android:textColor="@color/theme"
             android:textSize="20sp"
             android:textStyle="bold"
             android:fontFamily="@font/headings"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/orderId"
+
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
-            android:text="(Order id)"
-            android:padding="5dp"
-            android:textColor="@color/theme2"
-            android:fontFamily="@font/text"
-            android:textSize="15sp"
+            android:src="@drawable/ic_baseline_star_rate_24"
+            app:layout_constraintBottom_toTopOf="@+id/review"
+            app:layout_constraintEnd_toStartOf="@+id/rateStar"
             app:layout_constraintStart_toEndOf="@+id/username"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:tint="@color/color2" />
+
+        <TextView
+            android:id="@+id/rateStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/headings"
+            android:gravity="center"
+            android:text="5.0"
+            android:textColor="@color/color2"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginRight="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/review"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/review"
-            android:layout_width="331dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_margin="5dp"
             android:ellipsize="end"
-            android:maxLines="2"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/text"
+            android:maxLines="2"
+            android:padding="5dp"
             android:text="In publishing and graphic design, Lorem ipsum is a
  placeholder text commonly used to ….. more."
-            android:textColor="@color/theme"
+            android:textColor="@color/color1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="4dp"
-            android:text="19-7-21"
             android:fontFamily="@font/button"
+            android:text="19-7-21"
             android:textColor="@color/error"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/review"
+            app:layout_constraintTop_toBottomOf="@+id/review" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -30,14 +30,6 @@ review_adapt adapter;
         binding.revRecv.setAdapter(adapter);
         additeminrecv();
 
-
-
-
-
-
-
-
-
         return binding.getRoot();
     }
 

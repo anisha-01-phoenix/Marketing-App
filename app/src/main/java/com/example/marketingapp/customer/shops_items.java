@@ -36,7 +36,7 @@ public class shops_items extends AppCompatActivity {
                 binding.shopReview.setTextColor(Color.parseColor("#A62121"));
                 binding.shopProduct.setBackgroundResource(R.drawable.shopbuttonred);
                 binding.shopProduct.setTextColor(Color.parseColor("#FFFFFF"));
-                getSupportFragmentManager().beginTransaction().add(R.id.shopContainer, new Reviews(), null).commit();
+                startActivity(new Intent(shops_items.this,Review.class));
 
 
             }
