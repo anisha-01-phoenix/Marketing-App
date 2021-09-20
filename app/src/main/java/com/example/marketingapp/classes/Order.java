@@ -17,7 +17,6 @@ public class Order implements Serializable {
     private String uniqueIdUser;
     private int orderStatus;
     private String date;
-    private String time;
     private String price;
     private String productName;
     private String quantity;
@@ -25,13 +24,12 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(String uniqueId, String uniqueIdShop, String uniqueIdUser, int orderStatus, String date, String time, String price, String productName, String quantity) {
+    public Order(String uniqueId, String uniqueIdShop, String uniqueIdUser, int orderStatus, String date, String price, String productName, String quantity) {
         this.uniqueId = uniqueId;
         this.uniqueIdShop = uniqueIdShop;
         this.uniqueIdUser = uniqueIdUser;
         this.orderStatus = orderStatus;
         this.date = date;
-        this.time = time;
         this.price = price;
         this.productName = productName;
         this.quantity = quantity;
@@ -77,14 +75,6 @@ public class Order implements Serializable {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public String getPrice() {
         return price;
     }
@@ -98,7 +88,7 @@ public class Order implements Serializable {
         switch (orderStatus) {
             case 0:
                 textView.setText("Available");
-                textView.setTextColor(Color.CYAN);
+                textView.setTextColor(Color.GREEN);
                 break;
             case 1:
                 textView.setText("Pending");

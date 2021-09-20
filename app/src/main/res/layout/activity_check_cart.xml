@@ -4,12 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".customer.checkCart">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/headings"
+        android:gravity="center"
+        android:text=" My Cart"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="bck"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg2">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/finalize_order"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
@@ -19,22 +47,26 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button"
         android:elevation="100dp"
+        android:layout_centerInParent="true"
         android:fontFamily="@font/button"
         android:gravity="center"
-        android:text="Place Order    >>"
+        android:padding="5dp"
+        android:text="  Place Order  "
+        android:drawableEnd="@drawable/ic_baseline_double_arrow_24"
         android:textColor="@color/white"
         android:textSize="18dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartItems"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/finalize_order"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg2"
-        android:paddingTop="30dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartItems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/finalize_order"
+            android:paddingLeft="5dp"
+            android:paddingTop="30dp"
+            android:paddingRight="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

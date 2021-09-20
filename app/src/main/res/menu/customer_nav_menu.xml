@@ -3,90 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:id="@+id/c_shop"
-        android:icon="@drawable/ic_baseline_home_work_24"
-        android:title="Shops"/>
 
-
-    <item android:id="@+id/c_map"
-        android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Maps"/>
-
-    <item  android:title="Shop">
-
-        <menu>
-
-            <item android:id="@+id/c_products"
-                android:icon="@drawable/ic_baseline_products_24"
-                android:title="Products"/>
-
-
-            <item android:id="@+id/c_feedback"
-                android:icon="@drawable/ic_baseline_feedback_24"
-                android:title="Feedback"/>
-
-
-        </menu>
-
-    </item>
-
-
-    <item  android:title="My Items">
-
-        <menu>
-
-            <item android:id="@+id/c_order"
-                android:icon="@drawable/ic_baseline_shopping_basket_24"
-                android:title="Order"/>
-
-
-            <item android:id="@+id/c_cart"
-                android:icon="@drawable/ic_baseline_local_grocery_store_24"
-                android:title="Cart"/>
-
-
-            <item android:id="@+id/c_favourites"
-                android:icon="@drawable/ic_baseline_star_rate_24"
-                android:title="Favourites"/>
-
-
-        </menu>
-
-    </item>
-
-    <item android:id="@+id/s_order"
+    <item
+        android:id="@+id/s_order"
         android:icon="@drawable/ic_baseline_shopping_basket_24"
-        android:title="Orders"/>
-
-    <item android:id="@+id/s_wholesale"
-        android:icon="@drawable/ic_baseline_local_grocery_store_24"
-        android:title="Wholesellers"/>
+        android:title="Orders" />
 
 
-    <item  android:title="Settings">
+
+    <item
+        android:id="@+id/c_favourites"
+        android:icon="@drawable/ic_baseline_star_rate_24"
+        android:title="Favourites" />
+
+    <item
+        android:id="@+id/c_order"
+        android:icon="@drawable/ic_baseline_shopping_basket_24"
+        android:title="My Order Status" />
+
+
+    <item android:title="Settings">
 
         <menu>
 
-            <item android:id="@+id/s_about"
-                android:icon="@drawable/ic_baseline_shop_two_24"
-                android:title="About"/>
-
-
-            <item android:id="@+id/s_feedback"
+            <item
+                android:id="@+id/s_feedback"
                 android:icon="@drawable/ic_baseline_feedback_24"
-                android:title="Feedback"/>
+                android:title="Feedback" />
+
+            <item
+                android:id="@+id/s_wholesale"
+                android:icon="@drawable/ic_baseline_local_grocery_store_24"
+                android:title="Wholesellers" />
+
+            <item
+                android:id="@+id/s_about"
+                android:icon="@drawable/ic_baseline_shop_two_24"
+                android:title="About" />
+
+
+
 
 
         </menu>
 
     </item>
 
-    <item android:title="Logout"
+    <item
         android:id="@+id/logout"
-        android:icon="@drawable/ic_baseline_logout_24"/>
-
-
-
+        android:icon="@drawable/ic_baseline_logout_24"
+        android:title="Logout" />
 
 
 </menu>

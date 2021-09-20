@@ -45,18 +45,10 @@ String rate="3";
             @Override
             public void onClick(View v) {
 
-
-                String orderid = binding.orderid.getText().toString().trim();
                 String body = binding.review.getEditText().getText().toString().trim();
 
-                if (orderid.isEmpty()) {
-                    binding.orderid.setError("Can't be empty");
-                    binding.orderid.requestFocus();
-                    return;
-
-                }
                 if (body.isEmpty()) {
-                    binding.review.setError("Can't be empty");
+                    binding.review.setError("Enter the Reviews");
                     binding.review.requestFocus();
                     return;
 
@@ -64,16 +56,14 @@ String rate="3";
 
 
 
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("CustomerReviews").child("shopId");
-
-                String date = java.time.LocalDate.now().toString();
-                review_model rmd=new review_model();
-                rmd.setOrderid(orderid);
-                rmd.setUsername("username");
-                rmd.setDate(date);
-                rmd.setRating(rate);
-                rmd.setBody(body);
-                ref.push().setValue(rmd);
+//                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("CustomerReviews").child("shopId");
+//
+//                String date = java.time.LocalDate.now().toString();
+//                review_model rmd=new review_model();
+//                rmd.setDate(date);
+//                rmd.setRating(rate);
+//                rmd.setBody(body);
+//                ref.push().setValue(rmd);
 
 
             }

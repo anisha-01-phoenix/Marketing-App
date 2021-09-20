@@ -1,31 +1,25 @@
 package com.example.marketingapp.fragments;
 
-import static androidx.appcompat.content.res.AppCompatResources.getDrawable;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
 
-import com.example.marketingapp.R;
-import com.example.marketingapp.adapters.OrdersAdapter;
 import com.example.marketingapp.classes.Order;
+import com.example.marketingapp.customer.ModelCart_Customer;
+import com.example.marketingapp.customer.cartAdapter;
+import com.example.marketingapp.customer.cartmodel;
+import com.example.marketingapp.customer.checkCart;
 import com.example.marketingapp.databinding.FragmentOrderBinding;
+import com.example.marketingapp.shopkeeper.OrderAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,35 +27,37 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Fragment_Order extends Fragment {
 
     FragmentOrderBinding fragmentOrderBinding;
-    OrdersAdapter adapter;
-    DatabaseReference reference;
-    ArrayList<Order> list ;
-    Order order;
+    OrderAdapter adapter;
+    ArrayList<cartmodel> data;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         fragmentOrderBinding = FragmentOrderBinding.inflate(getLayoutInflater());
-        View view = fragmentOrderBinding.getRoot();
-        reference = FirebaseDatabase.getInstance().getReference("Orders");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        String uid= user.getUid();
+        data=new ArrayList<>();
         fragmentOrderBinding.rvOrders.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = new ArrayList<>();
-        reference.addValueEventListener(new ValueEventListener() {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(uid);
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    order = dataSnapshot.getValue(Order.class);
-                    list.add(order);
+                data.clear();
+                for (DataSnapshot s:snapshot.getChildren())
+                {
+                    cartmodel model=s.getValue(cartmodel.class);
+                    data.add(model);
                 }
-                adapter = new OrdersAdapter(getContext(), list);
+                adapter =new OrderAdapter(data, getActivity());
                 fragmentOrderBinding.rvOrders.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -72,7 +68,7 @@ public class Fragment_Order extends Fragment {
             }
         });
 
-        return view;
+        return fragmentOrderBinding.getRoot();
 
     }
 }

@@ -2,37 +2,36 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvshopcontent"
-    android:layout_margin="8dp"
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="100dp"
-    app:cardCornerRadius="20dp"
     android:padding="8dp"
     app:cardElevation="30dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/shopitemimage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/otp"
-            android:padding="8dp"
-            android:src="@drawable/lays" />
+            android:padding="8dp" />
 
 
         <TextView
-            android:id="@+id/shopcontenttitle"
+            android:id="@+id/shopcontentname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/shopitemimage"
             android:fontFamily="@font/headings"
             android:padding="5dp"
@@ -45,36 +44,84 @@
             android:id="@+id/shopcontentprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shopcontenttitle"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_below="@id/shopcontentdesc"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toRightOf="@id/shopitemimage"
             android:fontFamily="@font/text"
-            android:padding="5dp"
             android:text="price"
             android:textColor="@color/light"
             android:textSize="15dp"
             android:textStyle="bold" />
 
+
         <TextView
             android:id="@+id/shopcontenquantityavailable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shopcontenttitle"
-            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/text"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Quantity"
+            android:textColor="@color/theme"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/shopcontentdesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopcontentname"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/shopitemimage"
-            android:fontFamily="@font/button"
+            android:fontFamily="@font/text"
+            android:maxLines="2"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            android:textColor="@color/color1" />
+
+        <TextView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopcontentdesc"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/shopcontentprice"
+            android:fontFamily="@font/text"
             android:gravity="center"
-            android:padding="5dp"
-            android:text="Quantity"
-            android:textColor="@color/theme"
-            android:textSize="15dp" />
+            android:text="Discount: "
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/shopitemoffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopcontentdesc"
+            android:layout_toRightOf="@id/iv"
+            android:fontFamily="@font/text"
+            android:gravity="center"
+            android:text="offer"
+            android:textColor="@color/accept"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+
+        <ImageView
+            android:id="@+id/editProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:layout_below="@id/shopcontentdesc"
+            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
 

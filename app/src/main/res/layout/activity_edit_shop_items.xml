@@ -8,19 +8,32 @@
     tools:context=".shopkeeper.edit_shop_items">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/headings"
         android:gravity="center"
-        android:text="Shop Item"
-        android:textSize="30dp"
+        android:text=" Edit Shop Item"
         android:textColor="@color/white"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="backfromedit"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:src="@drawable/atta"
+            android:onClick="toastcreate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -156,6 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Product Price"
+                    android:inputType="number"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
@@ -184,6 +199,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Offer Price"
+                    android:inputType="number"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/dark"
                     android:fontFamily="@font/text"/>
