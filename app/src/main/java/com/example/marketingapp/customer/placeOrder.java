@@ -99,7 +99,15 @@ public class placeOrder extends AppCompatActivity {
                 binding.pRate.setText(String.valueOf((int) model.getRating()));
                 binding.sNme.setText(model.getShopName());
                 binding.sAdrs.setText(model.getAddress());
-                binding.cat.setText(model.getShopCategory());
+                binding.cat.setText("("+model.getShopCategory()+")");
+                switch (binding.cat.getText().toString())
+                {
+                    case "(GARMENT)" : binding.category.setImageResource(R.drawable.garment);
+                    case "(GENERAL STORE)" : binding.category.setImageResource(R.drawable.general);
+                    case "(MEDICINE)" : binding.category.setImageResource(R.drawable.medicine);
+                    case "(BAKERY)" : binding.category.setImageResource(R.drawable.bakery);
+                    default:binding.category.setImageResource(R.drawable.icon);
+                }
 
             }
 
