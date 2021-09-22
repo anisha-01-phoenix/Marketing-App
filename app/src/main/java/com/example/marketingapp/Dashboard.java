@@ -13,11 +13,15 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.marketingapp.Utils.Constants;
+import com.example.marketingapp.activities.Profile;
 import com.example.marketingapp.classes.Shopkeeper;
+import com.example.marketingapp.classes.User;
 import com.example.marketingapp.customer.Customer_Orders;
 import com.example.marketingapp.customer.ProductListAdapter;
 import com.example.marketingapp.customer.Review;
@@ -174,7 +178,38 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     private void updateNavHeader() {
         View view = activityDashboardBinding.navView.getHeaderView(0);
         TextView name = view.findViewById(R.id.name_header);
-        name.setText("Customer");
+        ImageView profile=view.findViewById(R.id.profile);
+        FirebaseDatabase.getInstance().getReference("ProfilePic").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                        Glide.with(Dashboard.this).load(snapshot.getValue()).into(profile);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+            }
+        });
+        FirebaseDatabase.getInstance().getReference("Customers").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user=snapshot.getValue(User.class);
+                name.setText(user.getName()+" ("+user.getPlace()+")");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override

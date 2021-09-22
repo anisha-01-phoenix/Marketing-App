@@ -45,7 +45,6 @@
                 android:layout_height="match_parent"
                 app:lottie_rawRes="@raw/rv_loading"
                 app:lottie_loop="true"
-                android:layout_margin="-50dp"
                 app:lottie_autoPlay="true"
                 android:id="@+id/view1"
                 android:visibility="gone"/>
