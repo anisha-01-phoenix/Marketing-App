@@ -19,7 +19,18 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/theme"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="45dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="39dp"
+                android:layout_gravity="right"
+                android:foregroundGravity="right"
+                android:src="@drawable/atta"
+                android:visibility="gone"
+                android:id="@+id/Prof_pic_toolbar"/>
+        </androidx.appcompat.widget.Toolbar>
 
 
         <FrameLayout

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.marketingapp.Utils.Constants;
@@ -41,6 +43,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ActivityDashboardBinding activityDashboardBinding;
@@ -58,10 +62,12 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         activityDashboardBinding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(activityDashboardBinding.getRoot());
         setTitle("Welcome to your EShop!");
+        //setContentView(R.layout.profile_menu_layout);
         setSupportActionBar(activityDashboardBinding.toolBar);
         sharedPreferences = getSharedPreferences("Market", MODE_PRIVATE);
         editor = sharedPreferences.edit();
         shopkeeper = new Shopkeeper();
+
 //        if (!getIntent().getStringExtra("showmap").equals(null))
 //        {
 ////            Intent intent = new Intent(Dashboard.this, MapsActivity.class);
@@ -75,7 +81,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         Menu menu = activityDashboardBinding.navView.getMenu();
         if (sharedPreferences.getString(Constants.permission, "").equalsIgnoreCase("user")) {
             updateNavHeader();
-
+prof_pic_customer();
 
 
             activityDashboardBinding.viewcart.setVisibility(View.VISIBLE);
@@ -173,6 +179,23 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     }
 
+    private void prof_pic_customer() {
+        activityDashboardBinding.ProfPicToolbar.setVisibility(View.VISIBLE);
+        FirebaseDatabase.getInstance().getReference("ProfilePic").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                            Glide.with(Dashboard.this).load(snapshot.getValue()).into(activityDashboardBinding.ProfPicToolbar);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+    }
 
 
     private void updateNavHeader() {
