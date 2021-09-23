@@ -36,9 +36,12 @@ public class review_adapt extends RecyclerView.Adapter<review_adapt.recviewholde
     public void onBindViewHolder(@NonNull recviewholder holder, int position) {
         
 
-        holder.customername.setText("");
-        holder.feedback.setText("");
-        holder.ratingBar.setRating(0);
+        holder.customername.setText(list.get(position).getCustomername());
+        holder.orderid.setText(list.get(position).getOrederid());
+        holder.feedback.setText(list.get(position).getReview());
+       int sr=list.get(position).getRatebar();
+        holder.ratingBar.setRating(sr);
+        holder.date.setText(list.get(position).getDate1());
 
 
     }
@@ -50,12 +53,14 @@ public class review_adapt extends RecyclerView.Adapter<review_adapt.recviewholde
 
     public class recviewholder extends RecyclerView.ViewHolder {
         RatingBar ratingBar;
-        TextView feedback,customername;
+        TextView feedback,customername,date,orderid;
         public recviewholder(@NonNull View itemView) {
             super(itemView);
             ratingBar=itemView.findViewById(R.id.rate_);
             feedback=itemView.findViewById(R.id.feedback);
             customername=itemView.findViewById(R.id.customername);
+           // orderid=itemView.findViewById(R.id.orderid_rev);
+           // date=itemView.findViewById(R.id.date_rev);
         }
     }
 }

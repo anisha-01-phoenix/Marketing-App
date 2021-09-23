@@ -1,15 +1,11 @@
 package com.example.marketingapp.shopkeeper;
 
 public class model_reviews_shop {
-    String customername,feedback,ratebar;
-
-    public String getRatebar() {
-        return ratebar;
-    }
-
-    public void setRatebar(String ratebar) {
-        this.ratebar = ratebar;
-    }
+    String customername;
+    String review;
+   int ratebar;
+    String orederid;
+    String date1;
 
     public String getCustomername() {
         return customername;
@@ -19,11 +15,35 @@ public class model_reviews_shop {
         this.customername = customername;
     }
 
-    public String getFeedback() {
-        return feedback;
+    public String getReview() {
+        return review;
     }
 
-    public void setDescription(String feedback) {
-        this.feedback = feedback;
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public int getRatebar() {
+        return ratebar;
+    }
+
+    public void setRatebar(int ratebar) {
+        this.ratebar = ratebar;
+    }
+
+    public String getOrederid() {
+        return orederid;
+    }
+
+    public void setOrederid(String orederid) {
+        this.orederid = orederid;
+    }
+
+    public String getDate1() {
+        return date1;
+    }
+
+    public void setDate1(String date1) {
+        this.date1 = date1;
     }
 }
