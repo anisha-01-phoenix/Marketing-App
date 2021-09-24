@@ -163,6 +163,21 @@
             android:textColor="@color/white"
             android:textSize="18dp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:drawableEnd="@drawable/ic_baseline_double_arrow_24"
+            android:elevation="100dp"
+            android:fontFamily="@font/button"
+            android:padding="8dp"
+            android:onClick="chk"
+            android:text="  next "
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="250dp"
