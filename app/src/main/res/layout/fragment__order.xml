@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.Fragment_Order">
 
 
@@ -12,5 +13,29 @@
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/no_orders"
+        android:id="@+id/noOrders"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You have not received any order yet!"
+        android:textSize="32dp"
+        android:textColor="@color/dark"
+        android:fontFamily="@font/headings"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="100dp"
+        android:id="@+id/noordertext"/>
+
 
 </FrameLayout>

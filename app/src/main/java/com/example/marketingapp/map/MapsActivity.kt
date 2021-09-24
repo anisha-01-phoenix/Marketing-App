@@ -245,10 +245,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         var uid = mAuth.uid
         shopkeeper?.coordinates = coordinates
         var reff : DatabaseReference
-        if(shopkeeper?.isWholeSeller!!.equals(false))
+//        if(shopkeeper?.isWholeSeller!!.equals(false))
             reff = FirebaseDatabase.getInstance().getReference("Shopkeeper").child(uid!!)
-        else
-            reff = FirebaseDatabase.getInstance().getReference("Wholesellers").child(uid!!)
+//        else
+//            reff = FirebaseDatabase.getInstance().getReference("Wholesellers").child(uid!!)
 
         reff.setValue(shopkeeper)
 

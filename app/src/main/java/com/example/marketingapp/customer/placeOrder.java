@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.marketingapp.Dashboard;
 import com.example.marketingapp.R;
+import com.example.marketingapp.activities.FullImageView;
 import com.example.marketingapp.classes.Shopkeeper;
 import com.example.marketingapp.databinding.ActivityPlaceOrderBinding;
 import com.example.marketingapp.shopkeeper.model_shopcontent;
@@ -47,6 +48,16 @@ public class placeOrder extends AppCompatActivity {
         date = dateFormat.format(calendar.getTime());
 
         Glide.with(this).load(url).into(binding.pImg);
+
+        binding.pImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(placeOrder.this, FullImageView.class);
+                intent.putExtra("zoom",url);
+                startActivity(intent);
+
+            }
+        });
 
         FirebaseDatabase.getInstance().getReference("CustomerReviews").child(shopid).child(productid).addValueEventListener(new ValueEventListener() {
             @Override
@@ -100,15 +111,6 @@ public class placeOrder extends AppCompatActivity {
                 binding.sNme.setText(model.getShopName());
                 binding.sAdrs.setText(model.getAddress());
                 binding.cat.setText("("+model.getShopCategory()+")");
-                switch (binding.cat.getText().toString())
-                {
-                    case "(GARMENT)" : binding.category.setImageResource(R.drawable.garment);
-                    case "(GENERAL STORE)" : binding.category.setImageResource(R.drawable.general);
-                    case "(MEDICINE)" : binding.category.setImageResource(R.drawable.medicine);
-                    case "(BAKERY)" : binding.category.setImageResource(R.drawable.bakery);
-                    default:binding.category.setImageResource(R.drawable.icon);
-                }
-
             }
 
             @Override

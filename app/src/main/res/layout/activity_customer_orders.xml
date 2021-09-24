@@ -46,6 +46,33 @@
         android:paddingLeft="8dp"/>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/noorder"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:lottie_rawRes="@raw/no_orders"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/headings"
+            android:elevation="500dp"
+            android:text="You have not placed any Orders yet!"
+            android:textSize="24dp"/>
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
