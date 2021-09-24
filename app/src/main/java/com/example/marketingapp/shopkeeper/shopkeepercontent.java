@@ -134,8 +134,12 @@ public class shopkeepercontent extends AppCompatActivity {
 
 
     public void addproducts(View view) {
-        bottom_frag_add_items bottom_frag_add_items = new bottom_frag_add_items();
+       /* bottom_frag_add_items bottom_frag_add_items = new bottom_frag_add_items();
         bottom_frag_add_items.show(getSupportFragmentManager(), bottom_frag_add_items.getTag());
+
+        */
+
+        startActivity(new Intent(getApplicationContext(),add_items_activity.class));
     }
 
     public void goback(View view) {

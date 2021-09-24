@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
+            android:name=".shopkeeper.add_items_activity"
+            android:exported="true" />
+        <activity
             android:name=".customer.Review"
             android:exported="true" />
         <activity
@@ -66,14 +69,12 @@
         <activity
             android:name=".map.MapsActivity"
             android:exported="true" />
-
-        <activity android:name=".activities.Profile"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.Profile"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".shopkeeper.MainActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
             android:name=".customer.shops_items"
             android:exported="true"
