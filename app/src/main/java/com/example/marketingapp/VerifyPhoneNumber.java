@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.marketingapp.Utils.Constants;
 import com.example.marketingapp.classes.Shopkeeper;
@@ -125,6 +126,19 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                 .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
 
+        Button btn = findViewById(R.id.next);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Shopkeeper shop1 = new Shopkeeper();
+                shop1.setShopName("Something");
+                shop1.setShopCategory("Garments");
+                Intent intent = new Intent(VerifyPhoneNumber.this, MapsActivity.class);
+                intent.putExtra("shopkeeper",shop1);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -161,16 +175,12 @@ public class VerifyPhoneNumber extends AppCompatActivity {
 //                                shopkeeper.setUniqueId(muser.getUid());
 //                                shopkeeper=new Shopkeeper(uid,"","",phoneNumber,"",0,false);
                                     shopkeeper = new Shopkeeper(uid, shopname, shopaddress, phoneNumber, shoptype, 0, wholesell);
-                                    DatabaseReference reference = database.getReference("Shopkeeper");
-                                    reference.child(uid).setValue(shopkeeper);
-                                    DatabaseReference reference1 = database.getReference("ShopPhNo");
-                                    reference1.push().setValue(phoneNumber);
 //                                    setMapCoordinates(new Shopkeeper());
                                     editor.putString(Constants.type, "shopkeeper");
                                     editor.putString(Constants.phone, shopkeeper.getPhoneNo());
                                     editor.commit();
-                                    Intent intent = new Intent(VerifyPhoneNumber.this, Dashboard.class);
-                                    intent.putExtra("showmap","OpenMap");
+                                    Intent intent = new Intent(VerifyPhoneNumber.this, MapsActivity.class);
+                                    intent.putExtra("shopkeeper",shopkeeper);
                                     startActivity(intent);
                                     finish();
                                 }

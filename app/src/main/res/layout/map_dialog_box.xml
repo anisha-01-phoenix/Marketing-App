@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/shop_name_txt_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Shop Name Here*"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/shop_type_txt_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Shop Type Here*"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/shop_desc_txt_view"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="*Shop Description Here*"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/shop_img_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/shopping_bag"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/shop_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/navigate_to_shop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Navigate To Shop"
+        android:textColor="@color/purple_500"
+        android:layout_gravity="end"/>
+
+    <Button
+        android:id="@+id/open_shop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Open Shop"
+        android:textColor="@color/purple_500"
+        android:layout_gravity="end"/>
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Cancel"
+        android:textColor="@color/purple_500"
+        android:layout_gravity="end"/>
+
+</LinearLayout>
