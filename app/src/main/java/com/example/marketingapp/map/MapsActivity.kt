@@ -191,6 +191,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
                     // and check the result in onActivityResult().
                     exception.startResolutionForResult(
                         this@MapsActivity,
+
                         REQUEST_TURN_DEVICE_LOCATION_ON
                     )
                 } catch (sendEx: IntentSender.SendIntentException) {
