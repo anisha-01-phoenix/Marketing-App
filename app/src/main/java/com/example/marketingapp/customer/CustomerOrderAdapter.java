@@ -37,10 +37,10 @@ import es.dmoral.toasty.Toasty;
 
 public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdapter.CustomerOrderVH> {
 
-    ArrayList<ModelCart_Customer> list;
+    ArrayList<cartmodel> list;
     Context context;
 
-    public CustomerOrderAdapter(ArrayList<ModelCart_Customer> list, Context context) {
+    public CustomerOrderAdapter(ArrayList<cartmodel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -55,7 +55,8 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
     @Override
     public void onBindViewHolder(@NonNull CustomerOrderVH holder, int position) {
 
-        ModelCart_Customer model = list.get(position);
+        cartmodel model = list.get(position);
+        holder.orderid.setText("OrderID: "+model.getOrderid());
         FirebaseDatabase.getInstance().getReference("Products").child(model.getProductid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -83,7 +84,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
             }
         });
 
-        holder.qty.setText(model.getQuantity());
+        holder.qty.setText("Qty: "+model.getQnty());
         holder.price.setText(model.getPrice());
         holder.date.setText(model.getDate());
 
@@ -182,7 +183,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
     public class CustomerOrderVH extends RecyclerView.ViewHolder {
 
         ImageView img, rate;
-        TextView c_name, p_name, qty, price, status, date;
+        TextView c_name,orderid, p_name, qty, price, status, date;
         CardView cv;
 
         public CustomerOrderVH(@NonNull View itemView) {
@@ -190,6 +191,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
             rate = itemView.findViewById(R.id.rateus);
             cv = itemView.findViewById(R.id.cv_order);
             img = itemView.findViewById(R.id.img_order);
+            orderid=itemView.findViewById(R.id.orderid);
             c_name = itemView.findViewById(R.id.nme_order);
             p_name = itemView.findViewById(R.id.p_order);
             qty = itemView.findViewById(R.id.qt_order);

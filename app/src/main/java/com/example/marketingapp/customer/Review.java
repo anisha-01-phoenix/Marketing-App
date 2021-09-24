@@ -49,9 +49,11 @@ public class Review extends AppCompatActivity {
 
                     review_model md = s.getValue(review_model.class);
                     data.add(md);
-
+                    binding.noreview.setVisibility(View.INVISIBLE);
 
                 }
+                if (data.size()==0)
+                    binding.noreview.setVisibility(View.VISIBLE);
                 reviewAdapter = new review_adapter(data, Review.this);
                 binding.recReview.setAdapter(reviewAdapter);
                 reviewAdapter.notifyDataSetChanged();

@@ -5,13 +5,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.marketingapp.Dashboard;
+import com.example.marketingapp.R;
 import com.example.marketingapp.databinding.ActivityCheckCartBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import es.dmoral.toasty.Toasty;
 
@@ -40,7 +45,10 @@ public class checkCart extends AppCompatActivity {
 
 
         data=new ArrayList<>();
-        binding.cartItems.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        binding.cartItems.setLayoutManager(layoutManager);
         getCartOrders();
 
 
@@ -55,10 +63,21 @@ public class checkCart extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toasty.success(getApplicationContext(),"Your Order has been Placed!").show();
-                                finalizeOrder();
-                                startActivity(new Intent(checkCart.this,Dashboard.class));
-                            }
+                                String s=finalizeOrder();
+                                final Snackbar snackbar=Snackbar.make(binding.relativeLayout,"Your Order ID: "+s+"\n"+"Note it down for future reference",Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("NOTED", new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                Toasty.success(getApplicationContext(),"Your Orders have been placed!").show();
+                                                startActivity(new Intent(checkCart.this,Dashboard.class));
+
+                                            }
+                                        }).setActionTextColor(getResources().getColor(R.color.accept));
+                                View snackview=snackbar.getView();
+                                TextView textView=snackview.findViewById(R.id.snackbar_text);
+                                textView.setTextColor(getResources().getColor(R.color.color2));
+                                snackbar.show();
+                              }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
@@ -75,7 +94,7 @@ public class checkCart extends AppCompatActivity {
 
     }
 
-    private void finalizeOrder() {
+    private String finalizeOrder() {
 
 //        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("orders").child("uid").child("shopId");
 //        ref.addValueEventListener(new ValueEventListener() {
@@ -119,8 +138,9 @@ public class checkCart extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         String uid= user.getUid();
+        String orderId=getrandomstring(5);
         DatabaseReference reference=FirebaseDatabase.getInstance().getReference("finalOrder");
-
+        DatabaseReference reference1=FirebaseDatabase.getInstance().getReference("customerOrder");
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(uid);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,8 +148,9 @@ public class checkCart extends AppCompatActivity {
                 for (DataSnapshot s:snapshot.getChildren())
                 {
                     ModelCart_Customer model=s.getValue(ModelCart_Customer.class);
-                    cartmodel cart=new cartmodel(model.getPrice(),model.getQuantity(),model.getShopid(),model.getCustomerid(),model.getProductid(),model.getDate(),model.getStatus());
-                    reference.child(model.getShopid()).child(model.getProductid()).setValue(cart);
+                    cartmodel cart=new cartmodel(model.getPrice(),model.getQuantity(),model.getShopid(),model.getCustomerid(),model.getProductid(),model.getDate(),orderId,model.getStatus());
+                    reference.child(model.getShopid()).child(orderId).setValue(cart);
+                    reference1.child(model.getCustomerid()).child(orderId).setValue(cart);
                 }
             }
 
@@ -139,6 +160,13 @@ public class checkCart extends AppCompatActivity {
             }
         });
 
+        removeOrders(uid);
+        return orderId;
+    }
+
+    private void removeOrders(String id) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(id);
+        ref.setValue(null);
 
     }
 
@@ -157,9 +185,13 @@ public class checkCart extends AppCompatActivity {
                 {
                     ModelCart_Customer model=s.getValue(ModelCart_Customer.class);
                     data.add(model);
+                    if (model!=null)
+                    binding.emptycart.setVisibility(View.INVISIBLE);
                 }
                 adapter =new cartAdapter(data,checkCart.this);
                 binding.cartItems.setAdapter(adapter);
+                if(data.size()==0)
+                    binding.emptycart.setVisibility(View.VISIBLE);
                 adapter.notifyDataSetChanged();
             }
 
@@ -213,4 +245,17 @@ public class checkCart extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(checkCart.this, Dashboard.class));
     }
+
+
+    public static String getrandomstring(int i) {
+        final String characters = "0123456789";
+        StringBuilder result = new StringBuilder();
+        while (i > 0) {
+            Random rand = new Random();
+            result.append(characters.charAt(rand.nextInt(characters.length())));
+            i--;
+        }
+        return result.toString();
+    }
+
 }

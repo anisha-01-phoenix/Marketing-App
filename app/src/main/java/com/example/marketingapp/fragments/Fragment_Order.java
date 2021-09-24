@@ -56,6 +56,13 @@ public class Fragment_Order extends Fragment {
                 {
                     cartmodel model=s.getValue(cartmodel.class);
                     data.add(model);
+                    fragmentOrderBinding.noOrders.setVisibility(View.INVISIBLE);
+                    fragmentOrderBinding.noordertext.setVisibility(View.INVISIBLE);
+                }
+                if (data.size()==0)
+                {
+                    fragmentOrderBinding.noOrders.setVisibility(View.VISIBLE);
+                    fragmentOrderBinding.noordertext.setVisibility(View.VISIBLE);
                 }
                 adapter =new OrderAdapter(data, getActivity());
                 fragmentOrderBinding.rvOrders.setAdapter(adapter);

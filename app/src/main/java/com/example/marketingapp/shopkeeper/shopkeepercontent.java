@@ -36,7 +36,6 @@ public class shopkeepercontent extends AppCompatActivity {
     ArrayList<model_shopcontent> contentlist;
     model_shopcontent modelShopcontent;
     shopcontentadapter shopcontentadapter;
-    modelcontent_fbase modelcontentFbase;
     private model_shopcontent model;
     private String shopId=" ";
     LottieAnimationView view;
@@ -103,8 +102,10 @@ public class shopkeepercontent extends AppCompatActivity {
                 }
                 shopcontentadapter = new shopcontentadapter(contentlist, context);
                 rcv.setAdapter(shopcontentadapter);
-                if (contentlist.size()==0)
+                if (contentlist.size()==0) {
                     noitem.setVisibility(View.VISIBLE);
+                    view.setVisibility(View.INVISIBLE);
+                }
                 else noitem.setVisibility(View.INVISIBLE);
                 shopcontentadapter.notifyDataSetChanged();
             }

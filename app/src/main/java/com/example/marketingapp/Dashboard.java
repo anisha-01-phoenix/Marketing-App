@@ -99,7 +99,7 @@ prof_pic_customer();
                     activityDashboardBinding.rvCustomer.setVisibility(View.VISIBLE);
 
                 }
-            }, 3000);
+            }, 4000);
 
             LinearLayoutManager manager = new LinearLayoutManager(this);
             manager.setReverseLayout(true);
@@ -152,11 +152,7 @@ prof_pic_customer();
             });
 
 
-
-                menu.findItem(R.id.s_about).setVisible(false);
             menu.findItem(R.id.s_feedback).setVisible(false);
-            menu.findItem(R.id.s_wholesale).setVisible(false);
-
             menu.findItem(R.id.s_order).setVisible(false);
 
         } else {
@@ -169,7 +165,7 @@ prof_pic_customer();
                     activityDashboardBinding.view1.setVisibility(View.INVISIBLE);
                     getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Fragment_Order(), null).commit();
                 }
-            }, 3000);
+            }, 4000);
 
 //             menu.findItem(R.id.c_cart).setVisible(false);
             menu.findItem(R.id.c_favourites).setVisible(false);
@@ -243,19 +239,10 @@ prof_pic_customer();
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.s_about:
-                break;
             case R.id.s_feedback:
                 startActivity(new Intent(Dashboard.this, Review.class));
                 break;
 
-//            case R.id.s_order:
-//                startActivity(new Intent(Dashboard.this, OrderList.class));
-//                break;
-//            case R.id.s_map:
-//
-            case R.id.s_wholesale:
-                break;
 
             case R.id.c_order:
 
@@ -266,31 +253,7 @@ prof_pic_customer();
                 getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Fragment_Order(), null).commit();
                 break;
 
-//            case R.id.s_pending:
-//                getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Fragment_Pending(), null).commit();
-//                break;
-//
-//            case R.id.s_processing:
-//                getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Fragment_Processing(), null).commit();
-//                break;
 
-//            case R.id.c_cart:
-//                break;
-//            case R.id.c_favourites:
-//                getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Favourites(), null).commit();
-//                break;
-
-//            case R.id.c_feedback:
-//                getSupportFragmentManager().beginTransaction().add(R.id.flayout, new Reviews(), null).commit();
-//                break;
-//            case R.id.c_products:
-//                break;
-//            case R.id.c_order:
-//                break;
-//            case R.id.c_map:
-//                break;
-//            case R.id.c_shop:
-//                break;
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(Dashboard.this, FirstScreen.class));

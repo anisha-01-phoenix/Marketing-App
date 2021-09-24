@@ -99,6 +99,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderVH> {
                 break;
         }
 
+        holder.orderID.setText("Order ID: "+model.getOrderid());
+
 
         holder.cv.setOnClickListener(new View.OnClickListener() {
             private int c;
@@ -123,12 +125,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderVH> {
                 alertDialog.setPositiveButton("SET STATUS", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DatabaseReference db = FirebaseDatabase.getInstance().getReference("finalOrder").child(model.getShopid()).child(model.getProductid());
-                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(model.getCustomerid()).child(model.getProductid());
-                        cartmodel cart = new cartmodel(model.getPrice(), model.getQnty(), model.getShopid(), model.getCustomerid(), model.getProductid(), model.getDate(), c);
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference("customerOrder").child(model.getCustomerid()).child(model.getOrderid());
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(model.getShopid()).child(model.getOrderid());
+                        cartmodel cart = new cartmodel(model.getPrice(), model.getQnty(), model.getShopid(), model.getCustomerid(), model.getProductid(), model.getDate(), model.getOrderid(), c);
                         db.setValue(cart);
-                        ModelCart_Customer modelCart_customer = new ModelCart_Customer(model.getShopid(), model.getProductid(), model.getCustomerid(), c, model.getPrice(), model.getQnty(), model.getDate());
-                        ref.setValue(modelCart_customer);
+                        ref.setValue(cart);
                         Toasty.success(context, "Status Updated!").show();
                         holder.status.setText(status);
 
@@ -158,7 +159,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderVH> {
 
     public class OrderVH extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView c_name, p_name, qty, price, status, date;
+        TextView c_name, orderID,p_name, qty, price, status, date;
         CardView cv;
 
         public OrderVH(@NonNull View itemView) {
@@ -167,6 +168,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderVH> {
             img = itemView.findViewById(R.id.img_order);
             c_name = itemView.findViewById(R.id.nme_order);
             p_name = itemView.findViewById(R.id.p_order);
+            orderID=itemView.findViewById(R.id.orderid);
             qty = itemView.findViewById(R.id.qt_order);
             price = itemView.findViewById(R.id.prc_order);
             status = itemView.findViewById(R.id.status);

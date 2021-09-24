@@ -126,18 +126,18 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                 .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
 
-        Button btn = findViewById(R.id.next);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Shopkeeper shop1 = new Shopkeeper();
-                shop1.setShopName("Something");
-                shop1.setShopCategory("Garments");
-                Intent intent = new Intent(VerifyPhoneNumber.this, MapsActivity.class);
-                intent.putExtra("shopkeeper",shop1);
-                startActivity(intent);
-            }
-        });
+//        Button btn = findViewById(R.id.next);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Shopkeeper shop1 = new Shopkeeper();
+//                shop1.setShopName("Something");
+//                shop1.setShopCategory("Garments");
+//                Intent intent = new Intent(VerifyPhoneNumber.this, MapsActivity.class);
+//                intent.putExtra("shopkeeper",shop1);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
