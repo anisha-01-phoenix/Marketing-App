@@ -125,10 +125,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderVH> {
                 alertDialog.setPositiveButton("SET STATUS", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DatabaseReference db = FirebaseDatabase.getInstance().getReference("customerOrder").child(model.getCustomerid()).child(model.getOrderid());
-                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(model.getShopid()).child(model.getOrderid());
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(model.getOrderid()+""+model.getProductid());
                         cartmodel cart = new cartmodel(model.getPrice(), model.getQnty(), model.getShopid(), model.getCustomerid(), model.getProductid(), model.getDate(), model.getOrderid(), c);
-                        db.setValue(cart);
                         ref.setValue(cart);
                         Toasty.success(context, "Status Updated!").show();
                         holder.status.setText(status);

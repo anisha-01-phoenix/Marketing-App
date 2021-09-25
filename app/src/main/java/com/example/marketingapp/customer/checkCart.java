@@ -140,8 +140,7 @@ public class checkCart extends AppCompatActivity {
         String uid= user.getUid();
         String orderId=getrandomstring(5);
         DatabaseReference reference=FirebaseDatabase.getInstance().getReference("finalOrder");
-        DatabaseReference reference1=FirebaseDatabase.getInstance().getReference("customerOrder");
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(uid);
+         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(uid);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -149,8 +148,7 @@ public class checkCart extends AppCompatActivity {
                 {
                     ModelCart_Customer model=s.getValue(ModelCart_Customer.class);
                     cartmodel cart=new cartmodel(model.getPrice(),model.getQuantity(),model.getShopid(),model.getCustomerid(),model.getProductid(),model.getDate(),orderId,model.getStatus());
-                    reference.child(model.getShopid()).child(orderId).setValue(cart);
-                    reference1.child(model.getCustomerid()).child(orderId).setValue(cart);
+                    reference.child(orderId+""+model.getProductid()).setValue(cart);
                 }
             }
 
@@ -167,7 +165,7 @@ public class checkCart extends AppCompatActivity {
     private void removeOrders(String id) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Customer_Cart").child(id);
         ref.setValue(null);
-
+        binding.emptycart.setVisibility(View.VISIBLE);
     }
 
     private void getCartOrders() {

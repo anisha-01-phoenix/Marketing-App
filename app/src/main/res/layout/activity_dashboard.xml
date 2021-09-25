@@ -27,7 +27,7 @@
                 android:layout_height="39dp"
                 android:layout_gravity="right"
                 android:foregroundGravity="right"
-                android:src="@drawable/atta"
+                android:src="@drawable/ic_baseline_person_24"
                 android:visibility="gone"
                 android:id="@+id/Prof_pic_toolbar"/>
         </androidx.appcompat.widget.Toolbar>

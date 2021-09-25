@@ -81,7 +81,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         Menu menu = activityDashboardBinding.navView.getMenu();
         if (sharedPreferences.getString(Constants.permission, "").equalsIgnoreCase("user")) {
             updateNavHeader();
-prof_pic_customer();
+            prof_pic_customer();
 
 
             activityDashboardBinding.viewcart.setVisibility(View.VISIBLE);
@@ -128,28 +128,28 @@ prof_pic_customer();
             });
 
             activityDashboardBinding.searchview.setVisibility(View.VISIBLE);
-            activityDashboardBinding.searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-
-                    ArrayList<model_shopcontent> filteredList = new ArrayList<>();
-
-                    for (model_shopcontent item : userList) {
-
-                        if (item.getProductName().toLowerCase().contains(newText.toLowerCase(Locale.ROOT))) {
-                            filteredList.add(item);
-                        }
-                    }
-                    adapter.filterList(filteredList);
-
-                    return false;
-                }
-            });
+//            activityDashboardBinding.searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//                @Override
+//                public boolean onQueryTextSubmit(String query) {
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onQueryTextChange(String newText) {
+//
+//                    ArrayList<model_shopcontent> filteredList = new ArrayList<>();
+//
+//                    for (model_shopcontent item : userList) {
+//
+//                        if (item.getProductName().toLowerCase().contains(newText.toLowerCase(Locale.ROOT))) {
+//                            filteredList.add(item);
+//                        }
+//                    }
+//                    adapter.filterList(filteredList);
+//
+//                    return false;
+//                }
+//            });
 
 
             menu.findItem(R.id.s_feedback).setVisible(false);
@@ -197,13 +197,13 @@ prof_pic_customer();
     private void updateNavHeader() {
         View view = activityDashboardBinding.navView.getHeaderView(0);
         TextView name = view.findViewById(R.id.name_header);
-        ImageView profile=view.findViewById(R.id.profile);
+        ImageView profile = view.findViewById(R.id.profile);
         FirebaseDatabase.getInstance().getReference("ProfilePic").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists())
-                        Glide.with(Dashboard.this).load(snapshot.getValue()).into(profile);
+                            Glide.with(Dashboard.this).load(snapshot.getValue()).into(profile);
                     }
 
                     @Override
@@ -220,8 +220,8 @@ prof_pic_customer();
         FirebaseDatabase.getInstance().getReference("Customers").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user=snapshot.getValue(User.class);
-                name.setText(user.getName()+" ("+user.getPlace()+")");
+                User user = snapshot.getValue(User.class);
+                name.setText(user.getName() + " (" + user.getPlace() + ")");
             }
 
             @Override

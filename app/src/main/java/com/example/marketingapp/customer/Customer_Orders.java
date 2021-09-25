@@ -30,32 +30,33 @@ public class Customer_Orders extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityCustomerOrdersBinding.inflate(getLayoutInflater());
+        binding = ActivityCustomerOrdersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        String uid= user.getUid();
-        data=new ArrayList<>();
-        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        String uid = user.getUid();
+        data = new ArrayList<>();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         binding.rvUser.setLayoutManager(layoutManager);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customerOrder").child(uid);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 data.clear();
-                for (DataSnapshot s:snapshot.getChildren())
-                {
+                for (DataSnapshot s : snapshot.getChildren()) {
+
                     cartmodel model=s.getValue(cartmodel.class);
+                    if (model.getCustomerid().equals(uid))
                     data.add(model);
                     if (model!=null)
                         binding.noorder.setVisibility(View.INVISIBLE);
                 }
-                adapter =new CustomerOrderAdapter(data, Customer_Orders.this);
-                if(data.size()==0)
+                adapter = new CustomerOrderAdapter(data, Customer_Orders.this);
+                if (data.size() == 0)
                     binding.noorder.setVisibility(View.VISIBLE);
                 binding.rvUser.setAdapter(adapter);
                 adapter.notifyDataSetChanged();

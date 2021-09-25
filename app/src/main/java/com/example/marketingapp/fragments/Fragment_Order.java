@@ -47,7 +47,7 @@ public class Fragment_Order extends Fragment {
         data=new ArrayList<>();
         fragmentOrderBinding.rvOrders.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder").child(uid);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -55,6 +55,7 @@ public class Fragment_Order extends Fragment {
                 for (DataSnapshot s:snapshot.getChildren())
                 {
                     cartmodel model=s.getValue(cartmodel.class);
+                    if (model.getShopid().equals(uid))
                     data.add(model);
                     fragmentOrderBinding.noOrders.setVisibility(View.INVISIBLE);
                     fragmentOrderBinding.noordertext.setVisibility(View.INVISIBLE);

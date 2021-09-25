@@ -60,7 +60,7 @@ public class Profile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists())
-                            Glide.with(Profile.this).load(snapshot.getValue()).into(binding.profilePic);
+                            Glide.with(getApplicationContext()).load(snapshot.getValue()).into(binding.profilePic);
                     }
 
                     @Override
