@@ -7,20 +7,29 @@ import androidx.databinding.BindingAdapter;
 
 public class cartmodel {
 
-    String price,qnty,shopid,customerid,productid,date;
+    String price,qnty,shopid,customerid,productid,date,orderid;
     int status;
 
     public cartmodel() {
     }
 
-    public cartmodel(String price, String qnty, String shopid, String customerid, String productid, String date, int status) {
+    public cartmodel(String price, String qnty, String shopid, String customerid, String productid, String date, String orderid, int status) {
         this.price = price;
         this.qnty = qnty;
         this.shopid = shopid;
         this.customerid = customerid;
         this.productid = productid;
         this.date = date;
+        this.orderid = orderid;
         this.status = status;
+    }
+
+    public String getOrderid() {
+        return orderid;
+    }
+
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
 
     public String getDate() {

@@ -49,7 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         model_shopcontent modelShopcontent=totallist.get(position);
         holder.nme1.setText(modelShopcontent.getProductName());
 //        holder.des1.setText(modelShopcontent.getProductDesc());
-        holder.qt1.setText(modelShopcontent.getProductQty());
+        holder.qt1.setText("Quantity: "+modelShopcontent.getProductQty());
         holder.prc1.setText(modelShopcontent.getProductPrice());
         Glide.with(context).load(modelShopcontent.getProductUrl()).into(holder.img1);
 

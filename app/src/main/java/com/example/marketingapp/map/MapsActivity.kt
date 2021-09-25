@@ -1,6 +1,8 @@
 package com.example.marketingapp.map
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -15,9 +17,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
 import com.example.marketingapp.Dashboard
 import com.example.marketingapp.R
 import com.example.marketingapp.classes.Coordinates
@@ -47,7 +51,7 @@ import es.dmoral.toasty.Toasty
 import java.util.*
 import java.util.jar.Manifest
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMyLocationChangeListener {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMyLocationChangeListener, GoogleMap.OnMarkerClickListener {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -193,6 +197,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
                     // and check the result in onActivityResult().
                     exception.startResolutionForResult(
                         this@MapsActivity,
+
                         REQUEST_TURN_DEVICE_LOCATION_ON
                     )
                 } catch (sendEx: IntentSender.SendIntentException) {
@@ -240,15 +245,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
         var uid = mAuth.uid
         shopkeeper?.coordinates = coordinates
         var reff : DatabaseReference
-        if(shopkeeper?.isWholeSeller!!.equals(false))
+//        if(shopkeeper?.isWholeSeller!!.equals(false))
             reff = FirebaseDatabase.getInstance().getReference("Shopkeeper").child(uid!!)
-        else
-            reff = FirebaseDatabase.getInstance().getReference("Wholesellers").child(uid!!)
+//        else
+//            reff = FirebaseDatabase.getInstance().getReference("Wholesellers").child(uid!!)
 
-        reff.setValue(coordinates)
+        reff.setValue(shopkeeper)
+
+        val reference1 : DatabaseReference = FirebaseDatabase.getInstance().getReference("ShopPhNo")
+        reference1.push().setValue(shopkeeper!!.phoneNo)
+
         progressDialog.cancel()
         val intent = Intent(this, Dashboard::class.java)
         startActivity(intent)
+        finish()
     }
 
     override fun onMyLocationChange(p0: Location) {
@@ -269,6 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
                         val latLng : LatLng = LatLng(shop.latitude,shop.longitude)
                         val marker2 : Marker = map.addMarker( MarkerOptions().position(latLng).title(child.child("shopName").value as String).snippet(snippet))
                         marker2.showInfoWindow()
+                        marker2.tag = child.key
                     }
                 }
             }
@@ -278,8 +289,67 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListen
             }
         }
 
+        map.setOnMarkerClickListener(this)
+
         reff.addValueEventListener(valueEventListener)
     }
+
+    class ShopDialogFragment(val shopkeeper: Shopkeeper) : DialogFragment() {
+
+        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+            return activity?.let {
+                val builder = AlertDialog.Builder(it)
+
+                val inflater = requireActivity().layoutInflater
+
+                val view = inflater.inflate(R.layout.map_dialog_box, null)
+                view.findViewById<TextView>(R.id.shop_name_txt_view).text = shopkeeper.shopName
+                view.findViewById<TextView>(R.id.shop_type_txt_view).text = shopkeeper.shopCategory
+                view.findViewById<Button>(R.id.navigate_to_shop_btn).setOnClickListener {
+                    // navigate to shop
+                }
+                view.findViewById<Button>(R.id.open_shop_btn).setOnClickListener {
+                    // open shop
+                }
+                view.findViewById<Button>(R.id.cancel_btn).setOnClickListener {
+                    // cancel
+                    this.dismiss()
+                }
+
+                builder.setView(view)
+
+                builder.create()
+            }?: throw IllegalStateException("Activity cannot be null")
+        }
+    }
+
+    override fun onMarkerClick(p0: Marker): Boolean {
+        val reff = FirebaseDatabase.getInstance().getReference("Shopkeepers")
+        lateinit var shopkeeper : Shopkeeper
+
+        val valueEventListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (child : DataSnapshot in snapshot.children){
+                    if (child.key.equals(p0.tag.toString())){
+                        shopkeeper = child.value as Shopkeeper
+                        break
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        }
+        reff.addValueEventListener(valueEventListener)
+
+        val newFragment = ShopDialogFragment(shopkeeper)
+        newFragment.show(supportFragmentManager, "shop")
+
+        return false
+    }
+
+
 }
 
 

@@ -36,25 +36,39 @@
         app:layout_constraintTop_toTopOf="@+id/textView3" />
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/bg2"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/text"
+            android:text="(Click on the Product Image to see its expanded view)"
+            android:textColor="@color/dark"
+            android:textSize="12dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintBottom_toTopOf="@+id/pImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/pImg"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:src="@drawable/atta"
             android:background="@drawable/otp"
             android:padding="5dp"
+            android:src="@drawable/atta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,11 +77,11 @@
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="wrap_content"
-            android:background="#F6CDC7"
-            android:padding="5dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="#F6CDC7"
             android:orientation="horizontal"
+            android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pImg">
@@ -112,14 +126,12 @@
                 android:id="@+id/qty1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/headings"
+                android:gravity="center"
                 android:inputType="number"
                 android:text="1"
-                android:textSize="20dp"
                 android:textColor="@color/dark"
-                android:fontFamily="@font/headings"
-                android:gravity="center"/>
-
-
+                android:textSize="20dp" />
 
 
             <TextView
@@ -156,6 +168,7 @@
             android:id="@+id/oPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:fontFamily="@font/text"
             android:text="Discount"
             android:textColor="@color/theme2"
@@ -165,13 +178,12 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/pPrice"
             app:layout_constraintTop_toBottomOf="@+id/pPrice"
-            android:layout_marginBottom="40dp"
             app:layout_constraintVertical_bias="0" />
 
         <TextView
+            android:id="@+id/totalqty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalqty"
             android:visibility="gone"
             tools:ignore="MissingConstraints" />
 
@@ -189,8 +201,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:elevation="100dp"
                 android:layout_gravity="center"
+                android:elevation="100dp"
                 android:outlineAmbientShadowColor="@color/light"
                 android:outlineSpotShadowColor="@color/light"
                 android:src="@drawable/ic_baseline_star_rate_24"
@@ -225,10 +237,10 @@
             android:text="description"
             android:textColor="@color/color1"
             android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@id/cl"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/cl"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -246,35 +258,32 @@
             app:layout_constraintVertical_bias="1">
 
 
-            <ImageView
-                android:id="@+id/category"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/shopbuttonwhite"
-                android:elevation="100dp"
-                android:padding="5dp"
-                android:src="@drawable/garment"
-                app:layout_constraintBottom_toTopOf="@+id/addtoCart"
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/headings"
+                android:gravity="center"
+                android:text="Shop Details"
+                android:textColor="@color/dark"
+                android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toEndOf="@+id/cat"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.4" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/sNme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/headings"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="ShopName"
-                android:textColor="@color/dark"
+                android:textColor="@color/theme"
                 android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
                 android:id="@+id/cat"
@@ -284,14 +293,15 @@
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Category"
-                android:textColor="@color/theme2"
+                android:textColor="@color/theme"
                 android:textSize="15dp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="@+id/sNme"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/sNme"
                 app:layout_constraintTop_toTopOf="@+id/sNme" />
+
 
             <TextView
                 android:id="@+id/sAdrs"
@@ -301,14 +311,11 @@
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Address"
-                android:textColor="@color/theme"
+                android:textColor="@color/theme2"
                 android:textSize="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05
-"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cat"
+                app:layout_constraintStart_toStartOf="@+id/sNme"
                 app:layout_constraintTop_toBottomOf="@+id/sNme" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addtoCart"

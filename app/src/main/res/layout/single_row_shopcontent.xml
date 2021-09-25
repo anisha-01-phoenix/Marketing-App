@@ -109,7 +109,7 @@
             android:fontFamily="@font/text"
             android:gravity="center"
             android:text="offer"
-            android:textColor="@color/accept"
+            android:textColor="@color/color1"
             android:textSize="15dp"
             android:textStyle="italic" />
 

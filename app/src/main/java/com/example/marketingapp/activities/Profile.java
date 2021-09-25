@@ -39,6 +39,8 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import es.dmoral.toasty.Toasty;
+
 public class Profile extends AppCompatActivity {
 
     ActivityProfileBinding binding;
@@ -133,6 +135,8 @@ public class Profile extends AppCompatActivity {
                         Glide.with(Profile.this).load(uri.toString()).into(binding.profilePic);
                         FirebaseDatabase.getInstance().getReference("ProfilePic").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(uri.toString());
                         progressDialog.dismiss();
+                        Toasty.success(getApplicationContext(),"Profile Photo Updated!").show();
+                        startActivity(new Intent(Profile.this,Dashboard.class));
                     }
                 });
             }

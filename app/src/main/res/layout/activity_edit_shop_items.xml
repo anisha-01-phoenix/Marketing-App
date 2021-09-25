@@ -228,23 +228,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.862"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Reviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/text"
-            android:gravity="center"
-            android:text="Reviews On this Item"
-            android:textColor="#650A0A"
-            android:textSize="16dp"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:onClick="item_review"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonsave"
-            app:layout_constraintVertical_bias="0.609" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/Reviews"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/text"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Reviews On this Item"-->
+<!--            android:textColor="#650A0A"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:onClick="item_review"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/buttonsave"-->
+<!--            app:layout_constraintVertical_bias="0.609" />-->
 
 
 

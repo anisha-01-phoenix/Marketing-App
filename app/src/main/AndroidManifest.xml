@@ -20,7 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
-            android:name=".shopkeeper.add_items_activity"
+            android:name=".shopkeeper.add_items_activity" />
+          <activity
+                    android:name=".activities.FullImageView"
             android:exported="true" />
         <activity
             android:name=".customer.Review"
@@ -59,16 +61,13 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".shopkeeper.shop_type"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".shopkeeper.shopkeepercontent"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".map.MapsActivity"
             android:exported="true" />
+
         <activity
             android:name=".activities.Profile"
             android:screenOrientation="portrait" />
@@ -77,8 +76,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".customer.shops_items"
-            android:exported="true"
-            android:screenOrientation="portrait" />
+            android:exported="true" />
         <activity
             android:name=".customer.placeOrder"
             android:screenOrientation="portrait" />
@@ -93,10 +91,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".FirstScreen"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".customer.allShops"
-            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SignUpActivity"
