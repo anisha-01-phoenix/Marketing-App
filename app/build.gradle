@@ -89,4 +89,11 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     // implementation 'me.spark:submitbutton:1.0.1'
     //  implementation 'io.paperdb:paperdb:2.7.1'
+
+    //razorpay
+    implementation 'com.razorpay:checkout:1.6.12'
+
+    //volley
+    implementation 'com.android.volley:volley:1.2.1'
+
 }

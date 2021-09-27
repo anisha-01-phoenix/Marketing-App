@@ -13,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.marketingapp.Dashboard;
+import com.example.marketingapp.PaymentActivity;
 import com.example.marketingapp.R;
+import com.example.marketingapp.classes.Order;
 import com.example.marketingapp.databinding.ActivityCheckCartBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,9 +34,9 @@ import es.dmoral.toasty.Toasty;
 public class checkCart extends AppCompatActivity {
 
     ActivityCheckCartBinding binding;
-
     cartAdapter adapter;
     ArrayList<ModelCart_Customer> data;
+    private Order order;
 
 
     @Override
@@ -43,7 +45,7 @@ public class checkCart extends AppCompatActivity {
         binding = ActivityCheckCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        order = new Order();
         data=new ArrayList<>();
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         layoutManager.setReverseLayout(true);
@@ -63,20 +65,11 @@ public class checkCart extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String s=finalizeOrder();
-                                final Snackbar snackbar=Snackbar.make(binding.relativeLayout,"Your Order ID: "+s+"\n"+"Note it down for future reference",Snackbar.LENGTH_INDEFINITE)
-                                        .setAction("NOTED", new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Toasty.success(getApplicationContext(),"Your Orders have been placed!").show();
-                                                startActivity(new Intent(checkCart.this,Dashboard.class));
 
-                                            }
-                                        }).setActionTextColor(getResources().getColor(R.color.accept));
-                                View snackview=snackbar.getView();
-                                TextView textView=snackview.findViewById(R.id.snackbar_text);
-                                textView.setTextColor(getResources().getColor(R.color.color2));
-                                snackbar.show();
+                                Intent intent = new Intent(checkCart.this , PaymentActivity.class);
+                                intent.putExtra("order",order);
+                                startActivity(intent);
+                                finish();
                               }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -191,6 +184,8 @@ public class checkCart extends AppCompatActivity {
                 if(data.size()==0)
                     binding.emptycart.setVisibility(View.VISIBLE);
                 adapter.notifyDataSetChanged();
+                order.setList(data);
+                order.calculate_total_price();
             }
 
             @Override

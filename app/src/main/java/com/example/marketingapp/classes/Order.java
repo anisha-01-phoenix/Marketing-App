@@ -5,58 +5,40 @@ import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.marketingapp.customer.ModelCart_Customer;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Serializable {
 
-    private String uniqueId;
-    private String uniqueIdShop;
+    private String orderId;
     private String uniqueIdUser;
+    private String transactionId;
     private int orderStatus;
     private String date;
-    private String price;
-    private String productName;
-    private String quantity;
+    private String time;
+    private int totalPrice;
+    private List<ModelCart_Customer> list = new ArrayList<>();
 
     public Order() {
     }
 
-    public Order(String uniqueId, String uniqueIdShop, String uniqueIdUser, int orderStatus, String date, String price, String productName, String quantity) {
-        this.uniqueId = uniqueId;
-        this.uniqueIdShop = uniqueIdShop;
-        this.uniqueIdUser = uniqueIdUser;
-        this.orderStatus = orderStatus;
-        this.date = date;
-        this.price = price;
-        this.productName = productName;
-        this.quantity = quantity;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public String getUniqueId() {
-        return uniqueId;
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public void setUniqueId(String uniqueId) {
-        this.uniqueId = uniqueId;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public int getOrderStatus() {
@@ -75,12 +57,44 @@ public class Order implements Serializable {
         this.date = date;
     }
 
-    public String getPrice() {
-        return price;
+    public String getUniqueIdUser() {
+        return uniqueIdUser;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setUniqueIdUser(String uniqueIdUser) {
+        this.uniqueIdUser = uniqueIdUser;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public List<ModelCart_Customer> getList() {
+        return list;
+    }
+
+    public void setList(List<ModelCart_Customer> list) {
+        this.list = list;
+    }
+
+    public void calculate_total_price() {
+        int price = 0;
+        for (int i = 0; i < list.size(); i++) {
+            price = price + (Integer.parseInt(list.get(i).getPrice()) * Integer.parseInt(list.get(i).getQuantity()));
+        }
+        this.totalPrice = price;
     }
 
     @BindingAdapter("android:setText")
