@@ -1,6 +1,8 @@
 package com.example.marketingapp.customer;
 
-public class ModelCart_Customer {
+import java.io.Serializable;
+
+public class ModelCart_Customer implements Serializable {
 
     String shopid;
     String productid;
