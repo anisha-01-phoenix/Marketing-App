@@ -1,10 +1,5 @@
 package com.example.marketingapp.classes;
 
-import android.graphics.Color;
-import android.widget.TextView;
-
-import androidx.databinding.BindingAdapter;
-
 import com.example.marketingapp.customer.ModelCart_Customer;
 
 import java.io.Serializable;
@@ -97,30 +92,30 @@ public class Order implements Serializable {
         this.totalPrice = price;
     }
 
-    @BindingAdapter("android:setText")
-    public static void setText(TextView textView, int orderStatus) {
-        switch (orderStatus) {
-            case 0:
-                textView.setText("Available");
-                textView.setTextColor(Color.GREEN);
-                break;
-            case 1:
-                textView.setText("Pending");
-                textView.setTextColor(Color.BLUE);
-                break;
-            case 2:
-                textView.setText("Processing");
-                textView.setTextColor(Color.DKGRAY);
-                break;
-            case 3:
-                textView.setText("Not Available");
-                textView.setTextColor(Color.RED);
-                break;
-            default:
-                textView.setTextColor(Color.BLACK);
-
-        }
-    }
+//    @BindingAdapter("android:setText")
+//    public static void setText(TextView textView, int orderStatus) {
+//        switch (orderStatus) {
+//            case 0:
+//                textView.setText("Available");
+//                textView.setTextColor(Color.GREEN);
+//                break;
+//            case 1:
+//                textView.setText("Pending");
+//                textView.setTextColor(Color.BLUE);
+//                break;
+//            case 2:
+//                textView.setText("Processing");
+//                textView.setTextColor(Color.DKGRAY);
+//                break;
+//            case 3:
+//                textView.setText("Not Available");
+//                textView.setTextColor(Color.RED);
+//                break;
+//            default:
+//                textView.setTextColor(Color.BLACK);
+//
+//        }
+//    }
 
 
 }

@@ -65,7 +65,6 @@ public class checkCart extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
                                 Intent intent = new Intent(checkCart.this , PaymentActivity.class);
                                 intent.putExtra("order",order);
                                 startActivity(intent);
@@ -179,13 +178,13 @@ public class checkCart extends AppCompatActivity {
                     if (model!=null)
                     binding.emptycart.setVisibility(View.INVISIBLE);
                 }
+                order.setList(data);
+                order.calculate_total_price();
                 adapter =new cartAdapter(data,checkCart.this);
                 binding.cartItems.setAdapter(adapter);
                 if(data.size()==0)
                     binding.emptycart.setVisibility(View.VISIBLE);
                 adapter.notifyDataSetChanged();
-                order.setList(data);
-                order.calculate_total_price();
             }
 
             @Override

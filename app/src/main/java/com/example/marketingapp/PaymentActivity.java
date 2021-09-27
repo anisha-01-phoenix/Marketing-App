@@ -58,7 +58,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         user = FirebaseAuth.getInstance().getCurrentUser();
         order = (Order) getIntent().getSerializableExtra("order");
 
-        body = "{  \"amount\": " + String.valueOf(order.getTotalPrice()) + ",  \"currency\": \"INR\",  \"receipt\": \"receipt#1\"}";
+        body = "{  \"amount\": " + String.valueOf(order.getTotalPrice()*100) + ",  \"currency\": \"INR\",  \"receipt\": \"receipt#1\"}";
 
     }
     public void startPayment() {
