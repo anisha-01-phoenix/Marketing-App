@@ -49,13 +49,13 @@ public class add_items_activity extends AppCompatActivity {
     Uri filepath;
     Bitmap bitmap;
     StorageReference storageReference;
-    String photoUrl="";
+    String photoUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       binding=ActivityAddItemsBinding.inflate(getLayoutInflater());
-       setContentView(binding.getRoot());
+        binding = ActivityAddItemsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -88,7 +88,7 @@ public class add_items_activity extends AppCompatActivity {
         });
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Shopkeeper");
-        storageReference= FirebaseStorage.getInstance().getReference();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         binding.uploadNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,9 +104,9 @@ public class add_items_activity extends AppCompatActivity {
                         uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                photoUrl=uri.toString();
+                                photoUrl = uri.toString();
                                 binding.uploadNow.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_task_alt_24));
-
+                                binding.addprodimg.setText("Image Added!");
                                 progressDialog.dismiss();
                             }
                         });
@@ -139,17 +139,18 @@ public class add_items_activity extends AppCompatActivity {
         binding.addprodctsFrag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.load.setVisibility(View.VISIBLE);
                 if (isChk()) {
                     DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference("Products");
                     String i = getrandomstring(6);
                     model_shopcontent model = new model_shopcontent(i, shopId, photoUrl,
                             binding.prodnamefrag.getEditText().getText().toString(),
                             binding.prodqtavailable.getEditText().getText().toString(),
-                            binding.proddesc.getEditText().getText().toString(), "Rs. "+
+                            binding.proddesc.getEditText().getText().toString(), "Rs. " +
                             binding.prodprice.getEditText().getText().toString(),
-                            binding.prodofferprice.getEditText().getText().toString()+"%");
+                            binding.prodofferprice.getEditText().getText().toString() + "%");
                     ref1.child(i).setValue(model);
-                    Toasty.normal(getApplicationContext(),"Product Image will be Updated Soon...").show();
+                    onBackPressed();
 
                 }
             }
@@ -158,16 +159,16 @@ public class add_items_activity extends AppCompatActivity {
     }
 
     private boolean isChk() {
-        if (photoUrl.equalsIgnoreCase(""))
-        {
-            Toasty.error(getApplicationContext(),"Please add an image of Your Product").show();
+        if (photoUrl.equalsIgnoreCase("")) {
+            Toasty.error(getApplicationContext(), "Please add an image of Your Product").show();
+            binding.load.setVisibility(View.INVISIBLE);
             return false;
         }
         if (binding.prodnamefrag.getEditText().getText().toString().isEmpty() || binding.prodqtavailable.getEditText().getText().toString().isEmpty()
                 || binding.proddesc.getEditText().getText().toString().isEmpty() || binding.prodprice.getEditText().getText().toString().isEmpty() ||
-                binding.prodofferprice.getEditText().getText().toString().isEmpty())
-        {
-            Toasty.error(getApplicationContext(),"Please enter all the fields").show();
+                binding.prodofferprice.getEditText().getText().toString().isEmpty()) {
+            Toasty.error(getApplicationContext(), "Please enter all the fields").show();
+            binding.load.setVisibility(View.INVISIBLE);
             return false;
         }
         return true;
@@ -203,4 +204,13 @@ public class add_items_activity extends AppCompatActivity {
     }
 
 
+    public void bcktoShop(View view) {
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(add_items_activity.this, shopkeepercontent.class));
+    }
 }

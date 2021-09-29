@@ -23,20 +23,26 @@
         android:theme="@style/Theme.MarketingApp">
         <activity
             android:name=".PaymentSuccessful"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PaymentActivity"
-            android:exported="true" />
-        <activity android:name=".shopkeeper.add_items_activity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".shopkeeper.add_items_activity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.FullImageView"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".customer.Review"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".customer.Customer_Orders"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"
@@ -77,12 +83,7 @@
         <activity
             android:name=".activities.Profile"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".shopkeeper.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".customer.shops_items"
-            android:exported="true" />
+
         <activity
             android:name=".customer.placeOrder"
             android:screenOrientation="portrait" />

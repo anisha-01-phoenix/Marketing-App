@@ -24,21 +24,22 @@ public class edit_shop_items extends AppCompatActivity {
     String productDesc;
     String productPrice;
     String offerPrice;
-ActivityEditShopItemsBinding binding;
+    ActivityEditShopItemsBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityEditShopItemsBinding.inflate(getLayoutInflater());
+        binding = ActivityEditShopItemsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Intent intent=getIntent();
-        productID=intent.getStringExtra("PRODUCT_ID");
-        shopID=intent.getStringExtra("SHOPID");
-        productName=intent.getStringExtra("PRODUCT_NAME");
-        productPrice=intent.getStringExtra("PRICE");
-        productQty=intent.getStringExtra("QUANTITY");
-        offerPrice=intent.getStringExtra("OFFER");
-        productDesc=intent.getStringExtra("DESCRIPTION");
-        productUrl=intent.getStringExtra("PRODUCT_URL");
+        Intent intent = getIntent();
+        productID = intent.getStringExtra("PRODUCT_ID");
+        shopID = intent.getStringExtra("SHOPID");
+        productName = intent.getStringExtra("PRODUCT_NAME");
+        productPrice = intent.getStringExtra("PRICE");
+        productQty = intent.getStringExtra("QUANTITY");
+        offerPrice = intent.getStringExtra("OFFER");
+        productDesc = intent.getStringExtra("DESCRIPTION");
+        productUrl = intent.getStringExtra("PRODUCT_URL");
 
 
         Glide.with(this).load(productUrl).into(binding.itemimage);
@@ -51,22 +52,22 @@ ActivityEditShopItemsBinding binding;
         binding.buttonsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Products").child(productID);
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Products").child(productID);
 //                ref.removeValue();
 //                DatabaseReference ref11= FirebaseDatabase.getInstance().getReference("shopid").child(binding.ediprodname.getEditText().getText().toString());
 //                modelcontent_fbase modelcontentFbase=new modelcontent_fbase();
 //                modelcontentFbase.setName(binding.ediprodname.getEditText().getText().toString());
 //                modelcontentFbase.setPrice(binding.editprice.getEditText().getText().toString());
 //                modelcontentFbase.setQt_available(binding.editqt.getEditText().getText().toString());
-                model_shopcontent model=new model_shopcontent(productID,shopID,productUrl,
+                model_shopcontent model = new model_shopcontent(productID, shopID, productUrl,
                         binding.ediprodname.getEditText().getText().toString(),
                         binding.editqt.getEditText().getText().toString(),
-                        binding.editdesc.getEditText().getText().toString(),"Rs."+
+                        binding.editdesc.getEditText().getText().toString(), "Rs." +
                         binding.editprice.getEditText().getText().toString(),
-                        binding.editofferprice.getEditText().getText().toString()+"%");
+                        binding.editofferprice.getEditText().getText().toString() + "%");
                 ref.setValue(model);
                 Toasty.success(getApplicationContext(), "Details Updated!").show();
-                startActivity(new Intent(edit_shop_items.this,shopkeepercontent.class));
+                startActivity(new Intent(edit_shop_items.this, shopkeepercontent.class));
 
             }
         });
@@ -76,7 +77,7 @@ ActivityEditShopItemsBinding binding;
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(edit_shop_items.this,shopkeepercontent.class));
+        startActivity(new Intent(edit_shop_items.this, shopkeepercontent.class));
 
     }
 
@@ -84,7 +85,7 @@ ActivityEditShopItemsBinding binding;
     }
 
     public void toastcreate(View view) {
-        Toasty.error(getApplicationContext(),"Product Image cannot be edited!");
+        Toasty.error(getApplicationContext(), "Product Image cannot be edited!");
     }
 
     public void backfromedit(View view) {
