@@ -50,15 +50,13 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         binding = ActivityPaymentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        reference = FirebaseDatabase.getInstance().getReference("Order");
-
         date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         time = new SimpleDateFormat("HH:mm:ss",Locale.getDefault()).format(new Date());
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         order = (Order) getIntent().getSerializableExtra("order");
 
-        body = "{  \"amount\": " + String.valueOf(order.getTotalPrice()*100) + ",  \"currency\": \"INR\",  \"receipt\": \"receipt#1\"}";
+        body = "{  \"amount\": " + String.valueOf(order.getTotalPrice()*100) + ",  \"currency\": \"INR\",  \"receipt\": \"receipt#2\"}";
 
     }
     public void startPayment() {
@@ -70,7 +68,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         /**
          * Set your logo here
          */
-        checkout.setKeyID("rzp_test_mzXlZqtivLRkK1");
+        checkout.setKeyID("rzp_test_Y7LgQIbW6tmUJV");
         checkout.setImage(R.drawable.icon);
 
         /**
@@ -134,7 +132,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
             public Map<String, String> getHeaders() throws AuthFailureError {
 
                 Map<String,String> map = new HashMap<>();
-                map.put("Authorization","Basic cnpwX3Rlc3RfbXpYbFpxdGl2TFJrSzE6TVZ3YWtPSzRQVzljTjhWaGpUNlRFVVJD");
+                map.put("Authorization","Basic cnpwX3Rlc3RfWTdMZ1FJYlc2dG1VSlY6Tml4QjRiRVppcndYOVd0YjkyRmY2RjZO");
                 map.put("content-type","application/json");
                 return map;
             }
@@ -161,15 +159,22 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         order.setDate(date);
         order.setTime(time);
         update_order_on_firebase();
+    }
 
+    private void clear_cart()
+    {
+        reference = FirebaseDatabase.getInstance().getReference("Customer_Cart");
+        reference.child(user.getUid()).removeValue();
+        Intent intent = new Intent(this, PaymentSuccessful.class);
+        startActivity(intent);
+        finish();
     }
 
     private void update_order_on_firebase ()
     {
+        reference = FirebaseDatabase.getInstance().getReference("Order");
         reference.child(order.getOrderId()).setValue(order);
-        Intent intent = new Intent(this, PaymentSuccessful.class);
-        startActivity(intent);
-        finish();
+        clear_cart();
     }
 
 }
