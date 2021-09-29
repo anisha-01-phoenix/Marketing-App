@@ -21,6 +21,7 @@
         android:textStyle="bold" />
 
 
+
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -49,15 +50,17 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:padding="8dp"
-                android:src="@drawable/atta"/>
+                android:src="@drawable/ic_baseline_products_24" />
 
             <ImageView
                 android:id="@+id/uploadNow"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/button"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_baseline_upload_24"
-                android:visibility="gone" />
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_upload_24"/>
+
 
         </LinearLayout>
 
@@ -132,6 +135,7 @@
                 android:textColor="@color/dark" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/prodqtavailable"
@@ -234,6 +238,15 @@
             android:textSize="16sp" />
 
 
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            android:id="@+id/load"/>
     </LinearLayout>
 
 

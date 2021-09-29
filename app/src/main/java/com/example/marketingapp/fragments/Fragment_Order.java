@@ -9,13 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.example.marketingapp.classes.Order;
 import com.example.marketingapp.customer.ModelCart_Customer;
-import com.example.marketingapp.customer.cartAdapter;
-import com.example.marketingapp.customer.cartmodel;
-import com.example.marketingapp.customer.checkCart;
 import com.example.marketingapp.databinding.FragmentOrderBinding;
 import com.example.marketingapp.shopkeeper.OrderAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,12 +23,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fragment_Order extends Fragment {
 
     FragmentOrderBinding fragmentOrderBinding;
     OrderAdapter adapter;
-    ArrayList<cartmodel> data;
+    ArrayList<Order> data;
 
 
     @Override
@@ -43,29 +40,33 @@ public class Fragment_Order extends Fragment {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        String uid= user.getUid();
-        data=new ArrayList<>();
+        String uid = user.getUid();
+        data = new ArrayList<>();
         fragmentOrderBinding.rvOrders.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("finalOrder");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Order");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 data.clear();
-                for (DataSnapshot s:snapshot.getChildren())
-                {
-                    cartmodel model=s.getValue(cartmodel.class);
-                    if (model.getShopid().equals(uid))
-                    data.add(model);
+                for (DataSnapshot s : snapshot.getChildren()) {
+                    Order order = s.getValue(Order.class);
+                    List<ModelCart_Customer> model = order.getList();
+                    for (int i = 0; i < model.size(); i++) {
+                        ModelCart_Customer modelCart_customer = model.get(i);
+                        if (modelCart_customer.getShopid().equals(uid)) {
+                            data.add(order);
+                            break;
+                        }
+                    }
                     fragmentOrderBinding.noOrders.setVisibility(View.INVISIBLE);
                     fragmentOrderBinding.noordertext.setVisibility(View.INVISIBLE);
                 }
-                if (data.size()==0)
-                {
+                if (data.size() == 0) {
                     fragmentOrderBinding.noOrders.setVisibility(View.VISIBLE);
                     fragmentOrderBinding.noordertext.setVisibility(View.VISIBLE);
                 }
-                adapter =new OrderAdapter(data, getActivity());
+                adapter = new OrderAdapter(data, getActivity());
                 fragmentOrderBinding.rvOrders.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }

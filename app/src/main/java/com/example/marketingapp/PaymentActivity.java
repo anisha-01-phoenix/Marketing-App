@@ -33,6 +33,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import es.dmoral.toasty.Toasty;
+
 public class PaymentActivity extends AppCompatActivity implements PaymentResultListener {
 
     private ActivityPaymentBinding binding;
@@ -81,11 +83,11 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
             options.put("description", "Reference No. #123456");
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
             options.put("order_id", orderId);//from response of step 3.
-            options.put("theme.color", "#3399cc");
+            options.put("theme.color", getResources().getColor(R.color.theme));
             options.put("currency", "INR");
             options.put("amount", order.getTotalPrice());//pass amount in currency subunits
-            options.put("prefill.email", "anshtandonlmp@gmail.com");
-            options.put("prefill.contact","8931902676");
+//            options.put("prefill.email", "anshtandonlmp@gmail.com");
+            options.put("prefill.contact",user.getPhoneNumber());
             JSONObject retryObj = new JSONObject();
             retryObj.put("enabled", true);
             retryObj.put("max_count", 4);
@@ -147,7 +149,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
 
     @Override
     public void onPaymentError(int i, String s) {
-        Toast.makeText(this, "Payment Failed", Toast.LENGTH_SHORT).show();
+        Toasty.error(getApplicationContext(), "Payment Failed").show();
         finish();
     }
 

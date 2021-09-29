@@ -139,6 +139,7 @@ public class add_items_activity extends AppCompatActivity {
         binding.addprodctsFrag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.load.setVisibility(View.VISIBLE);
                 if (isChk()) {
                     DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference("Products");
                     String i = getrandomstring(6);
@@ -149,7 +150,7 @@ public class add_items_activity extends AppCompatActivity {
                             binding.prodprice.getEditText().getText().toString(),
                             binding.prodofferprice.getEditText().getText().toString() + "%");
                     ref1.child(i).setValue(model);
-                    Toasty.normal(getApplicationContext(), "Product Image will be Updated Soon...").show();
+                    onBackPressed();
 
                 }
             }
@@ -160,12 +161,14 @@ public class add_items_activity extends AppCompatActivity {
     private boolean isChk() {
         if (photoUrl.equalsIgnoreCase("")) {
             Toasty.error(getApplicationContext(), "Please add an image of Your Product").show();
+            binding.load.setVisibility(View.INVISIBLE);
             return false;
         }
         if (binding.prodnamefrag.getEditText().getText().toString().isEmpty() || binding.prodqtavailable.getEditText().getText().toString().isEmpty()
                 || binding.proddesc.getEditText().getText().toString().isEmpty() || binding.prodprice.getEditText().getText().toString().isEmpty() ||
                 binding.prodofferprice.getEditText().getText().toString().isEmpty()) {
             Toasty.error(getApplicationContext(), "Please enter all the fields").show();
+            binding.load.setVisibility(View.INVISIBLE);
             return false;
         }
         return true;

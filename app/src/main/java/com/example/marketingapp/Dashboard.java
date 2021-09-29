@@ -233,7 +233,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public void onBackPressed() {
-
+        finish();
     }
 
     @Override
